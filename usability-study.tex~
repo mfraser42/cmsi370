@@ -11,7 +11,7 @@
 The object of this study is to collect usability measurements and assess how well the tested systems comply with their associated guidelines document. There are three systems being tested and three tasks are to be performed on each system. The three systems being tested are:
 \begin{enumerate}
 \item the Windows 7 operating system, 
-\item the Mac operating system, and
+\item the Mac OS X operating system, and
 \item the Fedora (Linux) operating system. 
 \end{enumerate}
 
@@ -21,6 +21,34 @@ The three tasks being performed accomplishable on each system, and are not neces
 \item connect to a Wireless Network, and
 \item open the native calculator application.
 \end{enumerate}
+
+\section{Process}
+
+Ten different individuals were asked to participate in this study. Most of the individuals are of the same background: senior Electrical Engineering majors. Three individuals have different backgrounds: one is a senior Mechanical Engineering major, one is a senior Computer Science major, and one is studying to become an elementary school teacher. The heavy focus on Engineering may skew the data, as engineering majors require a certain level of technological proficiency in their studies. 
+
+Each individual was asked to sit down in front of three computers: a MacBook running OS X, a desktop PC running Windows 7, and a laptop PC running Fedora. The variance in physical design between the three computers also challenges the validity of this study, as the design of the computer may influence the metrics being observed. 
+
+The experiment was run with tasks being performed on Mac OSX, then Windows 7, and then Fedora. This was later considered to be biasing the later tested systems, as the user begins to expect the next task for the later systems. The user was always unaware of their tasks when first facing the Mac OSX machine. 
+
+Each individual was told that a file titled "Find ME.txt" was hidden somewhere in the file system. The first task was to find that file and open it. A timer would run as soon as the individual was told to start, and the timer would be stopped when the individual opened the file. 
+
+\begin{center}
+    \begin{tabular}{| c | c |}
+        \hline
+        User Number & Time to Perform Task \\ \hline
+        1 & 20.2 \\ \hline
+        2 & 37.3 \\ \hline
+        3 & 36.91 \\ \hline
+        4 & 28.4 \\ \hline
+        5 & 13 \\ \hline
+        6 & 6.51 \\ \hline
+        7 & 27.86 \\ \hline
+        8 & 22.8 \\ \hline
+        9 & 16.73 \\ \hline
+        10 & 13.43 \\ 
+        \hline
+    \end{tabular}
+\end{center}
 
 \end{document}
 
