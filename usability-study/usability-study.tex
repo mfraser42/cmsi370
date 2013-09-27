@@ -1,3 +1,7 @@
+%
+% A study on the usability metrics of three different systems
+%
+
 \documentclass[11pt,letterpaper]{report}
 
 \begin{document}
@@ -7,10 +11,10 @@
 \maketitle
 
 \tableofcontents
+\listoftables
 
 \chapter{Usability Metrics}
 \section{Introduction}
-
 The object of this study is to collect usability measurements and assess how well the tested systems comply with their associated guidelines document. There are three systems being tested and three tasks are to be performed on each system. The three systems being tested are:
 \begin{enumerate}
 \item the Windows 7 operating system, 
@@ -31,23 +35,59 @@ The usabiliy metrics that are being reported are Learnability, Efficiency, and S
 
 \section{Self-Evaluations Pre-Experiment}
 
+Before running the experiments, each individual was asked to judge their own proficiency with each of the three systems. These values were averaged according to operating system and the resulting data can be found in Table \ref{pAvg}. As expected, the majority of the individuals were more comfortable with the more common operating systems: Mac OSX and Windows. Even though the majority of the people had never seen or interacted with Fedora before, the users believed they could at least figure it out. The individual's experiences with Snow Leopard and Windows 7 would be interactions measured with efficiency, whereas experiences with Fedora interactions would be measured as learnability. 
+
+\begin{table}
+    \centering
+    \begin{tabular}{| c | c | c |}
+        \hline
+        Snow Leopard & Windows 7 & Fedora \\ \hline
+        6.4 & 6.8 & 3.7 \\
+        \hline
+    \end{tabular}
+    \caption{Average Self-Evaluated Proficiency Pre-Experiment.}
+    \label{pAvg}
+\end{table}
+
 \section{Process}
 
 Each individual was asked to sit down in front of three computers: a MacBook running OS X, a desktop PC running Windows 7, and a laptop PC running Fedora. The variance in physical design between the three computers also challenges the validity of this study, as the design of the computer may influence the metrics being observed. 
 
 The experiment was run with tasks being performed on Mac OSX Snow Leopard, then Windows 7, and then Fedora. This was later considered to be biasing the later tested systems, as the user begins to expect the next task for the later systems. The user was always unaware of their tasks when first facing the Snow Leopard machine. 
 
-Each individual was told that a file titled "Find ME.txt" was hidden somewhere in the file system. The first task was to find that file and open it. A timer would run as soon as the individual was told to start, and the timer would be stopped when the individual opened the file. 
+\paragraph{Task 1:} Each individual was told that a file titled "Find ME.txt" was hidden somewhere in the file system. The first task was to find that file and open it. A timer would run as soon as the individual was told to start, and the timer would be stopped when the individual opened the file. 
+
+\paragraph{Task 2:} Each individual was then asked to "Connect to the student wireless network." One of the machines used, the desktop PC, was unable to connect to wireless at all. The task was measuring the time it took the user to open the list of available networks instead of actually measuring the time it took to connect to the network. This eliminated the need of the desktop PC to actually connect to a wireless network. 
+
+\paragraph{Task 3:} Each individual was then asked to open the system's native calculator application. They were told to start this task and timed until the calculator was open, or able to be used. 
+\vspace{5mm}
+After the three tasks were completed on one system, the individuals were asked to move to the next system. For each task on each system, the individual's actions were observed. Notes were taken on the steps the individual took to accomplish a task, any accidental errors along the way, and how the user reacted to obstacles or errors. At the end of each task, if the individual struggled to find a method of accomplishing a task, they were shown some alternative ways to accomplish the task.  
 
 \section{Results}
 
-The results for the first task, find a file, can be found in \ref{fafM}, \ref{fafW}, and \ref{fafL}.
+\subsection{Task 1: Find a File}
+The results for the first task, find a file, can be found in Table \ref{fafM}, Table \ref{fafW}, and Table \ref{fafL}. 
+
+\subsubsection{Windows 7}
+From the averages of these three tables, it would appear that most individuals were either more comfortable with Windows 7 over the other systems, or the system was more efficient. A common occurrence was opening the start menu in the bottom right corner and searching the file name there. Another common occurrence was the opening of Windows Explorer and running a search on the whole C: drive, which led the individuals to try a different approach as this search takes longer than necessary. 
+
+When setting up the directory path to hide the text file, the text file was accidentally placed on the Desktop, where it was unnoticed by the testers. When a few of the ten individuals were asked to find the file, they merely looked up and opened it off the Desktop. At this point, several tests had already been run without the file location being noticed. To stay consistent, the file was left where it was. This does skew the test data though, as no searching was necessary in a few occurrences for the Windows 7 system as it was for the other systems.
+
+\subsubsection{Snow Leopard}
+The next best average occured with the Snow Leopard operating system. The most common search method of the system was using the top right search bar to find the file. It was also noted that even when the file was found, the double-clicking functionality of the Mac laptop were faulty. Several individuals double-clicked the file, expecting it to open, and nothing would occur. To counter this fault, the timer was stopped when the double-clicking on the file was noted to occur.
+
+Finding a file on this system was met with the least number of errors, excluding typing errors. 
+
+\subsubsection{Fedora}
+Each individual underwent a learning experience trying to work with Fedora. Only a few individuals had used Linux before, and only one individual used it as their primary operating system. None of those users had ever worked with Fedora, as was evident when they were told to find the text file. The desktop screen of Fedora has few icons, and is primarily blank except for the background image. Most individuals, when sat in front of Fedora, began to mouse around in search of anything to click on. Most attempted mousing to the top right corner, where the battery, wifi, sound, and profile settings icons can be found. The main access to the applications of Fedora are accessed by mousing to the top left corner, which each individual eventually managed to find. 
+
+Accessing the applications window and opening the File System was the most common step the individuals took in finding the text file. From there, they searched the entire drive to find the folder. 
 
 \begin{table}
     \centering
     \begin{tabular}{| c | c |}
         \hline
-        User Number & Time to Perform Task \\ \hline
+        User Number & Time to Perform Task(s) \\ \hline
         1 & 20 \\  \hline
         2 & 37 \\  \hline
         3 & 37 \\ \hline
@@ -57,7 +97,8 @@ The results for the first task, find a file, can be found in \ref{fafM}, \ref{fa
         7 & 28 \\ \hline
         8 & 23 \\  \hline
         9 & 17 \\ \hline
-        10 & 13.5 \\ 
+        10 & 13.5 \\ \hline
+        Avg. & 22.4 \\
         \hline
     \end{tabular}
     \caption{User Performance for Finding a File on Snow Leopard.}
@@ -78,7 +119,8 @@ The results for the first task, find a file, can be found in \ref{fafM}, \ref{fa
         7 & 37.5 \\ \hline
         8 & 6 \\  \hline
         9 & 4.5 \\ \hline
-        10 & 2 \\ 
+        10 & 2 \\ \hline
+        Avg. & 15 \\
         \hline
     \end{tabular}
     \caption{User Performance for Finding a File on Windows 7.}
@@ -99,11 +141,40 @@ The results for the first task, find a file, can be found in \ref{fafM}, \ref{fa
         7 & 11.5 \\ \hline
         8 & 65 \\  \hline
         9 & 45.5 \\ \hline
-        10 & 30 \\ 
+        10 & 30 \\ \hline
+        Avg. & 51.4 \\
         \hline
     \end{tabular}
     \caption{User Performance for Finding a File on Fedora.}
     \label{fafL}    
+\end{table}
+
+\subsection{Task 2: Connecting to Wifi}
+
+The results for the second task, connecting to wifi, can be found in Table \ref{wifiM}, Table \ref{wifiW}, and Table \ref{wifiL}.
+
+The average time it took to bring up the list of available wireless networks was less than four seconds on every system. 
+
+\begin{table}
+    \centering
+    \begin{tabular}{| c | c |}
+        \hline
+        User Number & Time to Perform Task \\ \hline
+        1 & 1.5 \\  \hline
+        2 & 3.5 \\  \hline
+        3 & 3.5 \\ \hline
+        4 & 3.5 \\  \hline
+        5 & 1.5 \\    \hline
+        6 & 2.5 \\  \hline
+        7 & 2.5 \\ \hline
+        8 & 15.5 \\  \hline
+        9 & 1 \\ \hline
+        10 & 1.5 \\ \hline
+        Avg. & 3.3 \\
+        \hline
+    \end{tabular}
+    \caption{User Performance for Connecting to Wifi on Snow Leopard.}
+    \label{wifiM}    
 \end{table}
 
 \begin{table}
@@ -120,28 +191,8 @@ The results for the first task, find a file, can be found in \ref{fafM}, \ref{fa
         7 & 2.5 \\ \hline
         8 & 15.5 \\  \hline
         9 & 1 \\ \hline
-        10 & 1.5 \\ 
-        \hline
-    \end{tabular}
-    \caption{User Performance for Connecting to Wifi on Snow Leopard.}
-    \label{wifiM}    
-\end{table}
-
-\begin{table}
-    \centering
-    \begin{tabular}{| c | c |}
-        \hline
-        User Number & Time to Perform Task \\ \hline
-        1 & 1.5 \\  \hline
-        2 & 44 \\  \hline
-        3 & 43 \\ \hline
-        4 & 13.5 \\  \hline
-        5 & 111 \\    \hline
-        6 & 22.8 \\  \hline
-        7 & 11.5 \\ \hline
-        8 & 65 \\  \hline
-        9 & 45.5 \\ \hline
-        10 & 30 \\ 
+        10 & 1.5 \\ \hline
+        Avg. & 3.7 \\
         \hline
     \end{tabular}
     \caption{User Performance for Connecting to Wifi on Windows 7.}
@@ -153,28 +204,140 @@ The results for the first task, find a file, can be found in \ref{fafM}, \ref{fa
     \begin{tabular}{| c | c |}
         \hline
         User Number & Time to Perform Task \\ \hline
-        1 & 128 \\  \hline
-        2 & 44 \\  \hline
-        3 & 43 \\ \hline
-        4 & 13.5 \\  \hline
-        5 & 111 \\    \hline
-        6 & 22.8 \\  \hline
-        7 & 11.5 \\ \hline
-        8 & 65 \\  \hline
-        9 & 45.5 \\ \hline
-        10 & 30 \\ 
+        1 & 2 \\  \hline
+        2 & 2 \\  \hline
+        3 & 2 \\ \hline
+        4 & 3 \\  \hline
+        5 & 1 \\    \hline
+        6 & 3.5 \\  \hline
+        7 & 2 \\ \hline
+        8 & 1.5 \\  \hline
+        9 & 2 \\ \hline
+        10 & 1.5 \\ \hline
+        Avg. & 2.1 \\
         \hline
     \end{tabular}
     \caption{User Performance for Connecting to Wifi on Fedora.}
     \label{wifiL}    
 \end{table}
 
+
+\subsection{Task 3: Opening the Native Calculator Application}
+
+The results for the second task, connecting to wifi, can be found in Table \ref{calcM}, Table \ref{calcW}, and Table \ref{calcL}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{| c | c |}
+        \hline
+        User Number & Time to Perform Task \\ \hline
+        1 & 4 \\  \hline
+        2 & 12.5 \\  \hline
+        3 & 44 \\ \hline
+        4 & 11 \\  \hline
+        5 & 0.5 \\    \hline
+        6 & 2.5 \\  \hline
+        7 & 5.5 \\ \hline
+        8 & 26.5 \\  \hline
+        9 & 7 \\ \hline
+        10 & 7 \\ \hline
+        Avg. & 12.1 \\
+        \hline
+    \end{tabular}
+    \caption{User Performance for Opening Native Calculator on Snow Leopard.}
+    \label{calcM}    
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{| c | c |}
+        \hline
+        User Number & Time to Perform Task \\ \hline
+        1 & 5 \\  \hline
+        2 & 7 \\  \hline
+        3 & 4 \\ \hline
+        4 & 4 \\  \hline
+        5 & 5.5 \\    \hline
+        6 & 4 \\  \hline
+        7 & 5 \\ \hline
+        8 & 6 \\  \hline
+        9 & 6 \\ \hline
+        10 & 3 \\ \hline
+        Avg. & 5 \\
+        \hline
+    \end{tabular}
+    \caption{User Performance for Opening Native Calculator on Windows 7.}
+    \label{calcW}    
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{| c | c |}
+        \hline
+        User Number & Time to Perform Task \\ \hline
+        1 & 77 \\  \hline
+        2 & 74 \\  \hline
+        3 & 39 \\ \hline
+        4 & 24.5 \\  \hline
+        5 & 57 \\    \hline
+        6 & 34.5 \\  \hline
+        7 & 23.5 \\ \hline
+        8 & 40.5 \\  \hline
+        9 & 8.5 \\ \hline
+        10 & 9.5 \\ \hline
+        Avg. & 39 \\
+        \hline
+    \end{tabular}
+    \caption{User Performance for Opening Native Calculator on Fedora.}
+    \label{calcL}    
+\end{table}
+
 \section{Satisfaction Survey Results}
 
-\chapter{Heuristic Evaluation}
+After the different tasks were performed by each individual, the individual was asked to rate their satisfaction levels with each task performed on each system. The average satisfaction level for each combination of task and system can be found in Table \ref{Satisfaction}. From these averages, using the Snow Leopard system seemed to be the most satisfying, while using Fedora was somewhat unsatisfying.
 
-\section{Etc}
-\section{Conclusion}
+\begin{table}
+    \centering
+    \begin{tabular}{| c | c | c |}
+        \hline
+%        \multicolumn{3}{|c|}{Snow Leopard} & \multicolumn{3}{|c|}{Windows 7} & \multicolumn{3}{|c|}{Fedora} \\ \hline
+%           Attempted to Make a table with Snow Leopard, Windows 7, and Fedora as row items covering three columns each.
+%           The three columns would have Task 1, Task 2, and Task 3.  ---> Compiler Error. Temporary Solution below.
+        Mac Task 1 &  Mac Task 2 & Mac Task 3 \\ \hline
+        8.5 & 8.5 & 7.6 \\
+        \hline
+        \hline
+        Windows Task 1 & Windows Task 2 & Windows Task 3 \\ \hline
+        7.6 & 8.2 & 7.2 \\
+        \hline
+        \hline
+        
+        Linux Task 1 & Linux Task 2 & Linux Task 3 \\ \hline 
+        6.5 & 8 & 5.8 \\
+        \hline
+    \end{tabular}
+    \caption{Satisfaction Survey Averages for Each Task and System Combination.}
+    \label{Satisfaction}    
+\end{table}
+
+\section{Judgement}
+Mac had the highest overall satisfaction ratings. Windows 7 quickest to open calculator on average. All systems accessed the wireless network list with similar levels of efficiency. Windows 7 had the best average time to find a file as well. 
+
+For the finding a file task, high efficiency is a must. Taking long periods of time to find a file lowers the satisfaction an individual would have towards that system. 
+
+For connecting to wifi, consistency with other systems is very apparent. It is also neccessary for this step to be very efficient and error free, so users may switch between networks easily. 
+
+For open the native calculator application, low errors and decent efficiency are necessary. Errors that could cause the wrong program to be opened would also lower the satisfaction with the system, and takes additional time to close the program and find the calculator application again. 
+
+From the results of the study, Windows 7 appears to have the most efficient design. The majority of individuals have used Windows before, and this experience may have skewed the data to favor the system. More people appear to enjoy using the Snow Leopard system, however. This is due a significant decrease in errors noted in each task performed. 
+
+\chapter{Heuristic Evaluation}
+When the systems being compared are different operating systems, it is impossible to leave out user preference when considering efficiency. The tests were conducted with a limiting assumption that the individuals would have knowledge of how to use the different systems, when in actuality most people tend to stick to one operating system. Windows 7 users tend to know how to use Windows 7 more than they know how to use Snow Leopard or Fedora, just as Snow Leopard and Fedora users have greater knowledge of those systems than the others. The tests themselves allowed for additional error in data collection, as the hardware was different or the same systems were tested in the same order each time. Despite these errors, there are some noticable design choices by the various systems that allow users of all operating systems feel comfortable.
+
+The most significant design choice noted was the use of a similar icon for the wifi list selction. In each system, an icon representing signal strength of a wireless network were clear indications that the network settings could be modified by clicking that icon. In each system, that icon was accessible from the desktop. 
+
+Each of the tested systems have been modified and modified over several versions. Windows 7 grew off of Windows Vista, XP, 2000, etc. just like Fedora and Snow Leopard each had versions before them. Each system has also had other operating systems that were developed and released before they were. With today's society, the idea of wireless strength is very commonly known. From mobile cell phones to wireless signal strength, the common user has an idea built in from interactions with previous versions that a wireless signal strength icon looks like a dot with ever-expanding lines emitting from it. When these systems were developed, the signal strength icon was kept consistent with previous systems, as that is what the common user recognizes. Easy access for the wireless selection list is also a must, as moving a computer from one location to another will allow it to view many connections easily. 
+
 
 
 \end{document}
