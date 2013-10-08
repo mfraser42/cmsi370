@@ -22,18 +22,20 @@ The object of this study is to collect usability measurements and assess how wel
 \item the Fedora (Linux) operating system. 
 \end{enumerate}
 
-The three tasks being performed accomplishable on each system, and are not necessarily more accessible on any one system. The three tasks are:
+The three tasks being performed are accomplishable on each system, and are not necessarily more accessible on any one system. The three tasks are:
 \begin{enumerate}
 \item find a file,
 \item connect to a Wireless Network, and
 \item open the native calculator application.
 \end{enumerate}
 
-Ten different individuals were asked to participate in this study. Most of the individuals are of the same background: senior Electrical Engineering majors. Three individuals have different backgrounds: one is a senior Mechanical Engineering major, one is a senior Computer Science major, and one is studying to become an elementary school teacher. The heavy focus on Engineering may skew the data, as engineering majors require a certain level of technological proficiency in their studies. 
+Ten different individuals were asked to participate in this study. Most of the individuals are of the same background: senior Electrical Engineering majors. Three individuals have different backgrounds: one is a senior Mechanical Engineering major, one is a senior Computer Science major, and one is studying to become an elementary school teacher. The heavy focus on Engineering may skew the data, as engineering majors require a certain level of technological proficiency in their studies.
+% JD: Important observation about the engineers.
 
-The usabiliy metrics that are being reported are Learnability, Efficiency, and Satisfaction. None of the tested individuals had interacted with Fedora before, and only a few had ever interacted with Linux operating systems at all. All the users have had some interaction with Mac and Windows operating systems before. This creates an inbalance in the data collected: measuring learnability for the Fedora system tests and measuring efficiency for the Mac and Windows tests. 
+The usability metrics that are being reported are Learnability, Efficiency, and Satisfaction. None of the tested individuals had interacted with Fedora before, and only a few had ever interacted with Linux operating systems at all. All the users have had some interaction with Mac and Windows operating systems before. This creates an imbalance in the data collected: measuring learnability for the Fedora system tests and measuring efficiency for the Mac and Windows tests. 
 
 \section{Self-Evaluations Pre-Experiment}
+% JD: Nice idea.
 
 Before running the experiments, each individual was asked to judge their own proficiency with each of the three systems. These values were averaged according to operating system and the resulting data can be found in Table \ref{pAvg}. As expected, the majority of the individuals were more comfortable with the more common operating systems: Mac OSX and Windows. Even though the majority of the people had never seen or interacted with Fedora before, the users believed they could at least figure it out. The individual's experiences with Snow Leopard and Windows 7 would be interactions measured with efficiency, whereas experiences with Fedora interactions would be measured as learnability. 
 
@@ -60,7 +62,7 @@ The experiment was run with tasks being performed on Mac OSX Snow Leopard, then 
 \paragraph{Task 2:} Each individual was then asked to "Connect to the student wireless network." One of the machines used, the desktop PC, was unable to connect to wireless at all. The task was measuring the time it took the user to open the list of available networks instead of actually measuring the time it took to connect to the network. This eliminated the need of the desktop PC to actually connect to a wireless network. 
 
 \paragraph{Task 3:} Each individual was then asked to open the system's native calculator application. They were told to start this task and timed until the calculator was open, or able to be used. 
-\vspace{5mm}
+\vspace{5mm} % JD: Not clear---why the vspace here?
 After the three tasks were completed on one system, the individuals were asked to move to the next system. For each task on each system, the individual's actions were observed. Notes were taken on the steps the individual took to accomplish a task, any accidental errors along the way, and how the user reacted to obstacles or errors. At the end of each task, if the individual struggled to find a method of accomplishing a task, they were shown some alternative ways to accomplish the task.  
 
 \section{Results}
@@ -69,12 +71,21 @@ After the three tasks were completed on one system, the individuals were asked t
 The results for the first task, find a file, can be found in Table \ref{fafM}, Table \ref{fafW}, and Table \ref{fafL}. 
 
 \subsubsection{Windows 7}
-From the averages of these three tables, it would appear that most individuals were either more comfortable with Windows 7 over the other systems, or the system was more efficient. A common occurrence was opening the start menu in the bottom right corner and searching the file name there. Another common occurrence was the opening of Windows Explorer and running a search on the whole C: drive, which led the individuals to try a different approach as this search takes longer than necessary. 
+From the averages of these three tables, it would appear that most individuals were either more comfortable with Windows 7 over the other systems, or the system was more efficient. A common occurrence was opening the start menu in the bottom right corner and searching the file name there. Another common occurrence was the opening of Windows Explorer and running a search on the whole C: drive, which led the individuals to try a different approach as this search takes longer than necessary.
+% JD: This reveals the gotcha behind your chosen tests---it's very hard to separate
+%     prior user knowledge for platforms that are this common.  Strictly speaking,
+%     these tasks should be partitioned cleanly among OS X novices and experts,
+%     Windows novices and experts, etc.  Novices would get learnability; experts
+%     would get efficiency.  At least you show that you are generally aware of the
+%     issue, and thus understand the ideas.  In this context that is primarily what
+%     we're after.
 
 When setting up the directory path to hide the text file, the text file was accidentally placed on the Desktop, where it was unnoticed by the testers. When a few of the ten individuals were asked to find the file, they merely looked up and opened it off the Desktop. At this point, several tests had already been run without the file location being noticed. To stay consistent, the file was left where it was. This does skew the test data though, as no searching was necessary in a few occurrences for the Windows 7 system as it was for the other systems.
+% JD: Yep, that's a big "OOPS."  :-\
 
 \subsubsection{Snow Leopard}
-The next best average occured with the Snow Leopard operating system. The most common search method of the system was using the top right search bar to find the file. It was also noted that even when the file was found, the double-clicking functionality of the Mac laptop were faulty. Several individuals double-clicked the file, expecting it to open, and nothing would occur. To counter this fault, the timer was stopped when the double-clicking on the file was noted to occur.
+The next best average occurred with the Snow Leopard operating system. The most common search method of the system was using the top right search bar to find the file. It was also noted that even when the file was found, the double-clicking functionality of the Mac laptop were faulty. Several individuals double-clicked the file, expecting it to open, and nothing would occur. To counter this fault, the timer was stopped when the double-clicking on the file was noted to occur.
+% JD: Now, if you were measuring errors, that would be a legit one.
 
 Finding a file on this system was met with the least number of errors, excluding typing errors. 
 
@@ -292,6 +303,8 @@ The results for the second task, connecting to wifi, can be found in Table \ref{
     \label{calcL}    
 \end{table}
 
+% JD: Noticeably fewer notes on WiFi and calculator than with finding a file...?
+
 \section{Satisfaction Survey Results}
 
 After the different tasks were performed by each individual, the individual was asked to rate their satisfaction levels with each task performed on each system. The average satisfaction level for each combination of task and system can be found in Table \ref{Satisfaction}. From these averages, using the Snow Leopard system seemed to be the most satisfying, while using Fedora was somewhat unsatisfying.
@@ -325,20 +338,39 @@ Mac had the highest overall satisfaction ratings. Windows 7 quickest to open cal
 
 For the finding a file task, high efficiency is a must. Taking long periods of time to find a file lowers the satisfaction an individual would have towards that system. 
 
-For connecting to wifi, consistency with other systems is very apparent. It is also neccessary for this step to be very efficient and error free, so users may switch between networks easily. 
+For connecting to wifi, consistency with other systems is very apparent. It is also necessary for this step to be very efficient and error free, so users may switch between networks easily. 
 
-For open the native calculator application, low errors and decent efficiency are necessary. Errors that could cause the wrong program to be opened would also lower the satisfaction with the system, and takes additional time to close the program and find the calculator application again. 
+For opening the native calculator application, low errors and decent efficiency are necessary. Errors that could cause the wrong program to be opened would also lower the satisfaction with the system, and takes additional time to close the program and find the calculator application again. 
 
-From the results of the study, Windows 7 appears to have the most efficient design. The majority of individuals have used Windows before, and this experience may have skewed the data to favor the system. More people appear to enjoy using the Snow Leopard system, however. This is due a significant decrease in errors noted in each task performed. 
+From the results of the study, Windows 7 appears to have the most efficient design. The majority of individuals have used Windows before, and this experience may have skewed the data to favor the system. More people appear to enjoy using the Snow Leopard system, however. This is due to a significant decrease in errors noted in each task performed. 
+% JD: You started on the road to some prioritization here, but you should have
+%     challenged yourself all the way---all told, which operating environment
+%     *seems to be* the most usable?  Of course, this task set is extremely
+%     sparse and so the conclusion you draw really would be hugely preliminary,
+%     but the idea is that you at least went through the exercise of reaching
+%     a top-level decision.
+%
+%     Notable also is that, in hindsight, there were quite a few flaws in the
+%     study design.  For the "real thing," what you did here would have been
+%     more of a pilot, and your findings would lead you to restructure things
+%     before making another go.  As mentioned earlier, what matters is that you
+%     show that you are cognizant of the issues, giving me assurance that you
+%     understand the concepts at play and that, given the chance, you may be
+%     able to put a more reliable study together the next time.
 
 \chapter{Heuristic Evaluation}
-When the systems being compared are different operating systems, it is impossible to leave out user preference when considering efficiency. The tests were conducted with a limiting assumption that the individuals would have knowledge of how to use the different systems, when in actuality most people tend to stick to one operating system. Windows 7 users tend to know how to use Windows 7 more than they know how to use Snow Leopard or Fedora, just as Snow Leopard and Fedora users have greater knowledge of those systems than the others. The tests themselves allowed for additional error in data collection, as the hardware was different or the same systems were tested in the same order each time. Despite these errors, there are some noticable design choices by the various systems that allow users of all operating systems feel comfortable.
+When the systems being compared are different operating systems, it is impossible to leave out user preference when considering efficiency. The tests were conducted with a limiting assumption that the individuals would have knowledge of how to use the different systems, when in actuality most people tend to stick to one operating system. Windows 7 users tend to know how to use Windows 7 more than they know how to use Snow Leopard or Fedora, just as Snow Leopard and Fedora users have greater knowledge of those systems than the others. The tests themselves allowed for additional error in data collection, as the hardware was different or the same systems were tested in the same order each time. Despite these errors, there are some noticeable design choices by the various systems that allow users of all operating systems to feel comfortable.
 
-The most significant design choice noted was the use of a similar icon for the wifi list selction. In each system, an icon representing signal strength of a wireless network were clear indications that the network settings could be modified by clicking that icon. In each system, that icon was accessible from the desktop. 
+The most significant design choice noted was the use of a similar icon for the wifi list selection. In each system, an icon representing signal strength of a wireless network were clear indications that the network settings could be modified by clicking that icon. In each system, that icon was accessible from the desktop. 
 
 Each of the tested systems have been modified and modified over several versions. Windows 7 grew off of Windows Vista, XP, 2000, etc. just like Fedora and Snow Leopard each had versions before them. Each system has also had other operating systems that were developed and released before they were. With today's society, the idea of wireless strength is very commonly known. From mobile cell phones to wireless signal strength, the common user has an idea built in from interactions with previous versions that a wireless signal strength icon looks like a dot with ever-expanding lines emitting from it. When these systems were developed, the signal strength icon was kept consistent with previous systems, as that is what the common user recognizes. Easy access for the wireless selection list is also a must, as moving a computer from one location to another will allow it to view many connections easily. 
-
-
+% JD: Good discussion of how the principle of consistency and prevailing mental model
+%     of WiFi plays into those test results, though you could have documented this
+%     discussion better by, say, including screenshots of the WiFi icons on all systems.
+%     In comparison, the other tasks seem to have been given short shrift---you should
+%     have gone similarly deeper for them also.
 
 \end{document}
-
+% JD: Mechanics observation: typos, man.  Enough to be distracting---look at the diffs
+%     to see how many I fixed.  You really should give your writing at least a couple
+%     of passes.
