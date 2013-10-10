@@ -3,8 +3,7 @@ $(function () {
 
 
     $('#confirm-character-delete').click(function () {
-        console.log("Delete confirmed!");
-        $('#deleteModal').modal('hide');
+        console.log("Delete confirmed!")
     });
 
 });
