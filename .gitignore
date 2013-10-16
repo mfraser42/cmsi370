@@ -1,4 +1,5 @@
-.aux
-.lot
-.toc
-.log
+*.aux
+*.lot
+*.toc
+*.log
+*~
