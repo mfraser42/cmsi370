@@ -1,4 +1,15 @@
 .row {
     margin-bottom: 5px;
 }
-
+#c_list li{
+    background-color: #838b8b;
+    color:white;
+}
+h1 {
+    text-align: center;
+    color: crimson;
+    font-weight:bold;
+}
+body {
+    background-color: #b4cdcd;
+}
