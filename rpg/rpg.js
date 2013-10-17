@@ -1,9 +1,10 @@
-// Big things have small beginnings...
+// Big things have small beginnings... 
 $(function () {
 
+    var characters = ["Level 7 Slender", "Level 22 AquaMan", "Level 9001 Honey Badger", "Level 42 Potted Plant"];
 
     $('#confirm-character-delete').click(function () {
-        console.log("Delete confirmed!");
+        //characters.splice(characters.indexOf(
         $('#deleteModal').modal('hide');
     });
     
@@ -11,7 +12,7 @@ $(function () {
     inv_items.push("Wirt's Leg");
     inv_items.push("Potato");
     
-    var random_items = ["A Crooked Seven", "Pocket Lint", "A Microprocessor", "A Left Shoe", "A Pen", "Scroll on Interaction Design"];
+    var random_items = ["A Crooked Seven", "Pocket Lint", "Microprocessor", "Left Shoe", "Pen", "Scroll on Interaction Design", "Wirt\'s Leg", "Potato"];
     
     $( "#random_item" ).click(function () {
         if (inv_items.length == 9) {
@@ -22,8 +23,19 @@ $(function () {
             inv_items.push(random_items[rand_index]);
         }
     });
+    
+    $("#confirm-character-create").click(function () {
+        if ($("#create_char_name").val()) {
+            characters.push( "Level 1 " + $("#create_char_name").val());
+            $("#character-list").append("<li class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> Level 1 " + $("#create_char_name").val() + " </div> </div> </li>");
+            $("#createModal").modal('hide');
+        } else {
+            alert("You must enter a name.");
+        }
+        
+    });
+    
 
 });
 
-// click might be button specific, onclick() is just clicking everywhere? like mouse clicks?
 
