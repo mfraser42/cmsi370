@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bootstrap 101 Template</title>
+        <title>Puzzles RPG Home Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -25,13 +25,14 @@
                 <div class="col-md-4" id="c_list">
                     <h4> List of Characters </h4>
                     <ul id="character-list" class="list-group">
+                    <!--
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img src="http://placehold.it/40x30"> 
                                 </div>
                                 <div class="col-md-9">
-                                    Level 7 Slender
+                                    Slender: Level 7 Creeper
                                 </div>
                             </div>
                         </li>
@@ -41,7 +42,7 @@
                                     <img src="http://placehold.it/40x30"> 
                                 </div>
                                 <div class="col-md-9">
-                                    Level 22 AquaMan
+                                    AquaMan: Level 22 Underappeciated Hero
                                 </div>
                             </div>
                         </li>
@@ -51,7 +52,7 @@
                                     <img src="http://placehold.it/40x30"> 
                                 </div>
                                 <div class="col-md-9">
-                                    Level 9001 Honey Badger
+                                    Honey Badger: Level 9001 Beast
                                 </div>
                             </div>
                         </li>
@@ -61,10 +62,10 @@
                                     <img src="http://placehold.it/40x30"> 
                                 </div>
                                 <div class="col-md-9">
-                                    Level 42 Potted Plant
+                                    Potted Plant: Level 42 Unlucky Soul
                                 </div>
                             </div>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -130,6 +131,13 @@
             <div class="modal-body">
                 <div class="input-group">
                     <input id="create_char_name" type="text" class="form-control" placeholder="Character Name">
+                    <p> Pick a class: </p>
+                    <select id="class-select">
+                        <option value="Underappreciated Hero">Underappreciated Hero</option>
+                        <option value="Beast">Beast</option>
+                        <option value="Creeper">Creeper</option>
+                        <option value="Unlucky">Unlucky Soul</option>
+                    </select>
                 </div>
             </div>
             <div class="modal-footer">
