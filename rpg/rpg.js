@@ -11,6 +11,7 @@ $(function () {
 //        char_names.splice(index,1);
 //        char_levels.splice(index,1);
 //        char_types.splice(index,1);
+        $("#character-select option:selected").remove();
         $('#deleteModal').modal('hide');
     });
     
@@ -35,7 +36,9 @@ $(function () {
             char_names.push($("#create_char_name").val());
             char_levels.push("1");
             char_types.push($("#class-select").val());
-            $("#character-list").append("<li id=" + $("#create_char_name").val() + " class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> " + $("#create_char_name").val() + ": Level 1 " + $("#class-select").val() + " </div> </div> </li>");
+            $("#character-select").append("<option value = " + $("#create_char_name").val() + ">" + $("#create_char_name").val() + ": Level 1 " + $("#class-select").val() + "</option>");
+           
+           // $("#character-list").append("<li id=" + $("#create_char_name").val() + " class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> " + $("#create_char_name").val() + ": Level 1 " + $("#class-select").val() + " </div> </div> </li>");
            // window.location = "character.html#" + $("#create_char_name").val() +$("#class-select").val();
            $("#createModal").modal('hide');
         } else {
@@ -43,11 +46,11 @@ $(function () {
         } 
     });
     
-    $(document).ready( function () {
-        for (var o = 0; o < char_names.length; o++) {
-            $("#character-list").append("<li class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> " + char_names[o] +": Level " + char_levels[o] + " " + char_types[o] + " </div> </div> </li>");
-        }
-    });
+//    $(document).ready( function () {
+  //      for (var o = 0; o < char_names.length; o++) {
+    //        $("#character-list").append("<li class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> " + char_names[o] +": Level " + char_levels[o] + " " + char_types[o] + " </div> </div> </li>");
+  //      }
+   // });
 
 });
 

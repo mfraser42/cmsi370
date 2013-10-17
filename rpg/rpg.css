@@ -1,17 +1,17 @@
 .row {
     margin-bottom: 5px;
 }
-#c_list li{
-    background-color: #838b8b;
-    color:white;
-}
 h1 {
     text-align: center;
     color: crimson;
     font-weight:bold;
 }
+#character-select{
+    background-color:#838b8b;
+    color:white;
+}
 body {
-    background-color: #b4cdcd;
+    background-color: #b4cdcd;    
 }
 .page-header a{
     color:inherit;
