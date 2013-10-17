@@ -13,3 +13,10 @@ h1 {
 body {
     background-color: #b4cdcd;
 }
+.page-header a{
+    color:inherit;
+    text-decoration:none;
+}
+#inventory th{
+    text-align:center;
+}

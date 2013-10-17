@@ -1,25 +1,121 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <head>
+        <title>Bootstrap 101 Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
-    <!-- My CSS -->
-    <link rel="stylesheet" href="rpg.css">
-  </head>
-  <body>
-    <div class="container">
-        <div class="row">
-            <a href="index.html"> Back to Main Menu </a>
+        <!-- My CSS -->
+        <link rel="stylesheet" href="rpg.css">
+    </head>
+  
+  
+    <body>
+        <div class="container">
+              
+            <div class="row">
+                <div class="page-header">
+                    <h1>
+                        <a href="index.html">Puzzles RPG</a><br /> 
+                        <small>Well, why is it called Puzzles?</small>
+                    </h1>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-1"> </div>
+                <div class="col-md-4"> <img src="http://placehold.it/300x434"/> </div>
+                <div class="col-md-4"> 
+                    <table class="table table-bordered">
+                        <tr>
+                            <th> Property </th>
+                            <th> Value </th>
+                        </tr>
+                        <tr>
+                            <td> Name </td>
+                            <td> ## </td>
+                        </tr>                        
+                        <tr>
+                            <td> Level </td>
+                            <td> ## </td>
+                        </tr>
+                        <tr>
+                            <td> Fame </td>
+                            <td> 3 </td>
+                        </tr>
+                        <tr>
+                            <td> Sobriety </td>
+                            <td> 0 </td>
+                        </tr>
+                        <tr>
+                            <td> Luck </td>
+                            <td> 7 </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-3"> 
+                    <table id="inventory" class="table table-bordered">
+                        <th> Inventory </th>
+                        <tr> <td> Wirt's Leg </td> </tr>
+                        <tr> <td> Potato </td> </tr>
+                    </table>
+                    <button id="random_item" type="button" class="btn btn-info btn-block">Add Item</button>
+                </div>
+          <!--              <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>-->
+            </div>
+            
+            <div class="row"> <br /></div>
+            <div class="row" id="footer">
+                <div class="col-md-1"></div>
+                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="account.html">  Account  </a> </button> </div>
+                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="settings.html"> Settings </a> </button> </div>
+                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="feedback.html"> Feedback </a> </button> </div>
+                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="help.html"> Help         </a> </button> </div>
+                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> Logout </button> </div>
+            </div>
         </div>
-        <div class="row">
-            <!-- Cant draw anything yet -->
-            <img src="http://placehold.it/750x450" />
-        </div>
-      
     </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> (CORNER X)--> 
+          <h4 class="modal-title">Do you want to delete this character?</h4>
+        </div>
+        <div class="modal-body">
+          Deleting this character <strong> cannot </strong> be undone. 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Do Not Delete</button>
+          <button type="button" id="confirm-character-delete" class="btn btn-danger">Delete Character</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery.js"></script>
