@@ -4,7 +4,7 @@
         <title>Puzzles RPG Home Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
         <!-- My CSS -->
         <link rel="stylesheet" href="rpg.css">
@@ -16,21 +16,37 @@
               
             <div class="row">
                 <div class="page-header">
-                    <h1>Puzzles RPG<br /> <small>Well, why is it called Puzzles?</small></h1>
+                    <h1>Puzzles RPG<br /> <small>Character Selection</small></h1>
                 </div>
             </div>
             
+            
             <div class="row">
                 <div class="col-md-1"> </div>
-                <div class="col-md-4" id="character-list"> 
-                    <h4> List of Characters </h4>
-                    <select id="character-select" multiple class="form-control" id = "characters" size = 20>
-                        <option value="Slender">Slender: Level 7 Creeper</option>
-                        <option value="Honey Badger">Honey Badger: Level 9001 Beast</option>
-                        <option value="Potted Plant">Potted Plant: Level 42 Unlucky Soul</option>
-                        <option value="AquaMan">AquaMan: Level 22 Underappreciated Hero</option>
-                    </select>
+                <div class="col-md-5" id="character-list"> 
+                  <!-- table chars  <table id = "characters" class="table table-bordered table-hover"> 
+                        <thead>
+                            <tr>
+                                <th> Selected </th>
+                                <th> Name </th>
+                                <th> Class </th>
+                                <th> Sex </th>
+                                <th> Level </th>
+                                <th> Money </th>
+                            </tr>
+                            <tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
+            </div> -->
+            
+            
+                    <select id="character-select" multiple class="form-control" id = "characters" size = 20>
+                    </select>
+                </div> 
+            </div>
             
             
               <!--  <div class="col-md-1"> </div>
@@ -78,26 +94,26 @@
                             </div>
                         </li>
                     </ul>
-                </div> -->
-            </div>
+                </div> 
+            </div>-->
             
             <div class="row">
                 <div class="col-md-1"> </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <a id="create-button" data-toggle="modal" href="#createModal" class="btn btn-success btn-lg btn-block">Create</a>
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-md-1"> </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <a class="btn btn-info btn-lg btn-block" href="character.html">Edit</a>
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-md-1"> </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <a id="delete-button" data-toggle="modal" href="#deleteModal" class="btn btn-lg btn-danger btn-block">Delete</a>
                 </div>
             </div>
@@ -160,10 +176,10 @@
   </div><!-- /.modal -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
     <!-- Code specific to our RPG user interface. -->
     <script src="rpg.js"></script>

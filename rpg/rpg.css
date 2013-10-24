@@ -7,8 +7,8 @@ h1 {
     font-weight:bold;
 }
 #character-select{
-    background-color:#838b8b;
-    color:white;
+    background-color:#91B5B5;
+    color:crimson;
 }
 body {
     background-color: #b4cdcd;    
@@ -20,7 +20,13 @@ body {
 #inventory th{
     text-align:center;
 }
-/*.skill_choices input{
-    width:100px;
-    height:100px;
-}*/
+/* characters in table form 
+#characters th {
+    background-color:crimson;
+    color: white;
+}
+#characters {
+    background-color:#91B5B5;
+    color:crimson;
+    font-weight: bold;   
+} */
