@@ -31,21 +31,6 @@ $(function () {
         }
     });
     
-    $("#confirm-character-create").click(function () {
-        if ($("#create_char_name").val()) {
-            char_names.push($("#create_char_name").val());
-            char_levels.push("1");
-            char_types.push($("#class-select").val());
-            $("#character-select").append("<option value = " + $("#create_char_name").val() + ">" + $("#create_char_name").val() + ": Level 1 " + $("#class-select").val() + "</option>");
-           
-           // $("#character-list").append("<li id=" + $("#create_char_name").val() + " class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> " + $("#create_char_name").val() + ": Level 1 " + $("#class-select").val() + " </div> </div> </li>");
-           // window.location = "character.html#" + $("#create_char_name").val() +$("#class-select").val();
-           $("#createModal").modal('hide');
-        } else {
-            alert("You must enter a name.");
-        } 
-    });
-    
 //    $(document).ready( function () {
   //      for (var o = 0; o < char_names.length; o++) {
     //        $("#character-list").append("<li class=\"list-group-item\"> <div class=\"row\"> <div class=\"col-md-3\"> <img src=\"http://placehold.it/40x30\"> </div> <div class=\"col-md-9\"> " + char_names[o] +": Level " + char_levels[o] + " " + char_types[o] + " </div> </div> </li>");
@@ -96,7 +81,48 @@ $(function () {
     
     });
     
+    $("#confirm-character-delete").click(function() { 
+        $.ajax({
+            type: 'DELETE',
+            url: "http://lmu-diabolical.appspot.com/characters/" + $("#character-select option:selected").val(),
+            success: function (data, textStatus, jqXHR) {
+                $("#character-select option:selected").remove();
+            }
+        });
+    });
+
+    $("#confirm-character-create").click(function() {
+        if ($("#create-char-name").val() && $("#create-char-class").val()) {
+            $.ajax({
+                type: 'POST',
+                url: "http://lmu-diabolical.appspot.com/characters",
+                data: JSON.stringify({
+                    name: $("#create-char-name").val(),
+                    classType: $("#create-char-class").val(),
+                    gender: $("#create-char-sex").val(),
+                    level: 1,
+                    money: 500
+                }),
+                contentType: "application/json",
+                dataType: "json",
+                accept: "application/json",
+                complete: function (jqXHR, textStatus) {
+                    // The new character can be accessed from the Location header.
+                    console.log("You may access the new character at:" +
+                        jqXHR.getResponseHeader("Location"));
+                }
+            });
+            $('#createModal').modal('hide');
+        } else {
+            alert("You must enter the following fields.");
+        } 
+    });
     
+    // Cleanup after closure of modal.
+    $('#createModal').on('hidden.bs.modal', function () {
+        $("#create-char-name, #create-char-class, #create-char-sex").val("");
+    });
+
 
 });
 
