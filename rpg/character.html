@@ -4,10 +4,10 @@
         <title>Character Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
         <!-- My CSS -->
-        <link rel="stylesheet" href="rpg.css">
+        <link rel="stylesheet" href="../rpg.css">
     </head>
   
   
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="page-header">
                     <h1>
-                        <a href="index.html">Puzzles RPG</a><br /> 
+                        <a href="../index.html">Puzzles RPG</a><br /> 
                         <small>Well, why is it called Puzzles?</small>
                     </h1>
                 </div>
@@ -27,31 +27,27 @@
                 <div class="col-md-1"> </div>
                 <div class="col-md-4"> <img src="http://placehold.it/300x434"/> </div>
                 <div class="col-md-4"> 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th> Property </th>
-                            <th> Value </th>
-                        </tr>
-                        <tr>
-                            <td> Name </td>
-                            <td> ## </td>
-                        </tr>                        
-                        <tr>
-                            <td> Level </td>
-                            <td> ## </td>
-                        </tr>
-                        <tr>
-                            <td> Fame </td>
-                            <td> 3 </td>
-                        </tr>
-                        <tr>
-                            <td> Sobriety </td>
-                            <td> 0 </td>
-                        </tr>
-                        <tr>
-                            <td> Luck </td>
-                            <td> 7 </td>
-                        </tr>
+                    <table id="char-props-table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> Property </th>
+                                <th> Value </th>
+                            </tr>
+                        </thead>
+                        <tbody>                     
+                            <tr>
+                                <td> Level </td>
+                            </tr>
+                            <tr>
+                                <td> Class </td>
+                            </tr>
+                            <tr>
+                                <td> Money </td>
+                            </tr>
+                            <tr>
+                                <td> Gender </td>
+                            </tr>
+                        </tbody>
                     </table>
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -117,12 +113,12 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
     <!-- Code specific to our RPG user interface. -->
-    <script src="character.js"></script>
+    <script src="../character.js"></script>
   </body>
 </html>

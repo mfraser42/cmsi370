@@ -85,12 +85,16 @@ $(function () {
         "http://lmu-diabolical.appspot.com/characters",
         function(characters) {
             characters.forEach(function(character) {
-                var characterRow = "<option value=" + character.name + ">" + character.name + ": " + "Level " + character.level + " " + character.classType + "</option>";
+                var characterRow = "<option value=" + character.id + ">" + character.name + ": " + "Level " + character.level + " " + character.classType + "</option>";
                 $("#character-select").append(characterRow);                
             });
         }
     );
     
+    $("#edit-button").click(function() {
+        window.location="character.html/#" + $("#character-select option:selected").val();
+    
+    });
     
     
 
