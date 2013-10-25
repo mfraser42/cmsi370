@@ -32,7 +32,7 @@ $(function () {
     );
     
     $("#edit-button").click(function() {
-        window.location="character.html/#" + $("#character-select option:selected").attr("id");
+        window.location="character.html"; //#" + $("#character-select option:selected").attr("id");
     
     });
     
