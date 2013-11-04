@@ -1,19 +1,31 @@
 \begin{thebibliography}{1}
 
+\bibitem{IEEE_EFS}
+{Richardo Mendes Costa Segundo} and {Celso Alberto Saibel Santos}.
+\newblock Second screen event flow synchonization.
+\newblock In {\em {2013 IEEE International Symposium on Broadband Multimedia
+  Systems and Broadcasting}}, 2013.
+
 \bibitem{TwitterTV}
-{Watching Together: Twitter and TV}.
+Twitter.
+\newblock {Watching Together: Twitter and TV}.
 \newblock
   \url{http://https://blog.twitter.com/2011/watching-together-twitter-and-tv},
   2011.
 
 \bibitem{MashableSmartGlass}
 Christina Warren.
-\newblock Xbox smartglass brings the second screen to games and videos.
+\newblock {Xbox SmartGlass Brings the Second Screen to Games and Videos}.
 \newblock {\em Mashable}, 2012.
 
 \bibitem{MashableChris}
 Christina Warren.
 \newblock {Chris Gorham Leverages the Second Screen For TV Success}.
 \newblock {\em Mashable}, 2013.
+
+\bibitem{wiki_second_screen}
+Wikipedia.
+\newblock Second screen.
+\newblock [Online; accessed 3-November-2013].
 
 \end{thebibliography}
