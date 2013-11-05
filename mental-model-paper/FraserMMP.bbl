@@ -1,5 +1,13 @@
 \begin{thebibliography}{1}
 
+\bibitem{ACM}
+Mark Lochrie and Paul Coulton.
+\newblock Mobile phones as second screen for tv, enabling inter-audience
+  interaction.
+\newblock In {\em Proceedings of the 8th International Conference on Advances
+  in Computer Entertainment Technology}, ACE '11, pages 73:1--73:2, New York,
+  NY, USA, 2011. ACM.
+
 \bibitem{IEEE_EFS}
 {Richardo Mendes Costa Segundo} and {Celso Alberto Saibel Santos}.
 \newblock Second screen event flow synchonization.
@@ -26,6 +34,7 @@ Christina Warren.
 \bibitem{wiki_second_screen}
 Wikipedia.
 \newblock Second screen.
+\newblock \url{"http://en.wikipedia.org/wiki/Second_screen#History"}.
 \newblock [Online; accessed 3-November-2013].
 
 \end{thebibliography}
