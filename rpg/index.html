@@ -44,11 +44,16 @@
             
             
                     <select id="character-select" multiple class="form-control" id = "characters" size = 20>
+                        <!-- JD: Format your attributes consistently: typically ^^^^^^ it is no spaces
+                                 around the = with the value always in double-quotes, even if said value
+                                 is a number. -->
                     </select>
                 </div> 
             </div>
             
-            
+            <!-- JD: These prior vestiges of your all-mock user interface can be safely deleted now, I'd
+                     say.  They're on GitHub anyway. -->
+
               <!--  <div class="col-md-1"> </div>
                 <div class="col-md-4" id="c_list">
                     <h4> List of Characters </h4>
@@ -120,6 +125,8 @@
             <div class="row"> <br /></div>
             <div class="row" id="footer">
                 <div class="col-md-1"></div>
+                <!-- JD: Cramming these onto one line gets somewhat cluttered.  You can safely linebreak
+                         and indent along tags as usual just fine here. -->
                 <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="account.html"> Account  </a> </button> </div>
                 <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="settings.html"> Settings </a> </button> </div>
                 <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="feedback.html"> Feedback </a> </button> </div>
@@ -162,6 +169,8 @@
                     <input id="create-char-class" type="text" class="form-control" placeholder="Class" />
                     <br />
                     <input id="create-char-sex" type="text" class="form-control" placeholder="Sex" />
+                    <!-- JD: Why did you dump this?  Looks like a fine select element for
+                             a character's class. -->
                     <!--<select id="class-select">
                         <option value="Underappreciated Hero">Underappreciated Hero</option>
                         <option value="Beast">Beast</option>

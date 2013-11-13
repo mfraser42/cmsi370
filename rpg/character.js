@@ -1,3 +1,5 @@
+/* JD: Oops, I guess you didn't bother with interactive behavior on this page.
+       There is one straggler in rpg.js that seems like it should be here, though. */
 /*$(function () {
 
     $.getJSON(

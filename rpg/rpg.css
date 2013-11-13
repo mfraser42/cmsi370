@@ -1,6 +1,9 @@
 .row {
     margin-bottom: 5px;
 }
+
+/* JD: For readability, I recommend a blank line between CSS blocks.
+       Put a space after your colons also. */
 h1 {
     text-align: center;
     color: crimson;
