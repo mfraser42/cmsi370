@@ -66,18 +66,19 @@ $(function () {
                     
                     boxLeft = touch.target.movingBox.offset().left;
                     boxTop = touch.target.movingBox.offset().top;
+                    boxHeight = touch.target.movingBox.height();
+                    boxWidth = touch.target.movingBox.width();
                     
                     // if the box was not outside the drawing area, but now it is, highlight it red
                     if ((boxLeft > rightBorder) || (boxTop > bottomBorder) ||
-                        (boxTop < (touch.target.movingBox.height() + topBorder)) || 
-                        (boxLeft < (touch.target.movingBox.width() + leftBorder)))  {
+                        (boxTop < (topBorder - boxHeight)) || (boxLeft < (leftBorder - boxWidth)))  {
                         touch.target.movingBox.removeClass("box-highlight");
                         touch.target.movingBox.addClass("box-to-be-deleted");
                         touch.target.movingBox.addClass("delete-highlight");
                         //alert("made it");
                     } else if ((boxLeft < rightBorder) || (boxTop < bottomBorder) || 
-                        (boxTop > (touch.target.movingBox.height() + topBorder)) || 
-                        (boxLeft > (touch.target.movingBox.width() + leftBorder))) {
+                        (boxTop > (topBorder - boxHeight)) || 
+                        (boxLeft > (leftBorder - boxWidth))) {
                         touch.target.movingBox.removeClass("box-to-be-deleted");
                         touch.target.movingBox.removeClass("delete-highlight");
                         touch.target.movingBox.addClass("box-highlight");
