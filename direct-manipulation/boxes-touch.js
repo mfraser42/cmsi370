@@ -1,3 +1,4 @@
+/* Michael Fraser */
 $(function () {
     var cache = {};
     
@@ -66,35 +67,40 @@ $(function () {
                         top: touch.pageY - touch.target.deltaY
                     });
                     
+                    /* variables concerning the drawing area box */
                     touchArea = $("#drawing-area");
                     rightBorder = touchArea.offset().left + touchArea.width();
                     bottomBorder = touchArea.offset().top + touchArea.height();
                     leftBorder = touchArea.offset().left;
                     topBorder = touchArea.offset().top;
                     
+                    /* variables concerning the moving box (thing being manipulated) */
                     boxLeft = touch.target.movingBox.offset().left;
                     boxTop = touch.target.movingBox.offset().top;
                     boxHeight = touch.target.movingBox.height();
                     boxWidth = touch.target.movingBox.width();
                     
-                    // if the box was not outside the drawing area, but now it is, highlight it red
+                    // if the box is outside the drawing area, highlight it red. if inside, keep it highlighted bluw
                     if ((boxLeft > rightBorder) || (boxTop > bottomBorder) ||
                         (boxTop < (topBorder - boxHeight)) || (boxLeft < (leftBorder - boxWidth)))  {
                         touch.target.movingBox.removeClass("box-highlight");
+                        //alert("potato");
                         touch.target.movingBox.addClass("box-to-be-deleted");
                         touch.target.movingBox.addClass("delete-highlight");
                     } else if ((boxLeft < rightBorder) || (boxTop < bottomBorder) || 
                         (boxTop > (topBorder - boxHeight)) || 
                         (boxLeft > (leftBorder - boxWidth))) {
+                        //alert("potaato");
                         touch.target.movingBox.removeClass("box-to-be-deleted");
                         touch.target.movingBox.removeClass("delete-highlight");
                         touch.target.movingBox.addClass("box-highlight");     
                     }
                 }
                 
+                /* only to occur if a box is being created*/
                 if (cacheEntry.creatingBox) {
                     var newLeft, newTop, newWidth, newHeight;
-                    
+                    // if the finger is on the left side of the starting location..
                     if (touch.pageX < cacheEntry.initialX) {
                         newLeft = touch.pageX;
                         newWidth = cacheEntry.initialX - touch.pageX;
@@ -105,7 +111,7 @@ $(function () {
                             newTop = cacheEntry.initialY;
                             newHeight = touch.pageY - cacheEntry.initialY;
                         }
-                    } else { //(finger is on other side)
+                    } else { //if the finger is on the right side
                         newLeft = cacheEntry.initialX;
                         newWidth = touch.pageX - cacheEntry.initialX;
                         if (touch.pageY < cacheEntry.initialY) {
@@ -144,10 +150,12 @@ $(function () {
                     // touch.target.movingBox.
                     touch.target.movingBox = null;
                 }
-                if (cacheEntry) {
+                if (cacheEntry.creatingBox) {
                     cacheEntry.creatingBox.removeClass("create-highlight");
                     cacheEntry.creatingBox = null;
                 }
+                cache[touchIndex] = cacheEntry;
+                cacheEntry = null;
                 delete cache[touchIndex];
             });
         },
