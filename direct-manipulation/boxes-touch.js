@@ -57,8 +57,6 @@ $(function () {
         trackDrag: function (event) {
             $.each(event.changedTouches, function (index, touch) {
                 // Don't bother if we aren't tracking anything.
-                touchIndex = touch.indentifier;
-                cacheEntry = cache[touchIndex];
                 if (touch.target.movingBox) {
                 
                     // Reposition the object.
@@ -84,22 +82,24 @@ $(function () {
                     if ((boxLeft > rightBorder) || (boxTop > bottomBorder) ||
                         (boxTop < (topBorder - boxHeight)) || (boxLeft < (leftBorder - boxWidth)))  {
                         touch.target.movingBox.removeClass("box-highlight");
-                        //alert("potato");
+                        //alert(touch.target.movingBox);
                         touch.target.movingBox.addClass("box-to-be-deleted");
                         touch.target.movingBox.addClass("delete-highlight");
                     } else if ((boxLeft < rightBorder) || (boxTop < bottomBorder) || 
                         (boxTop > (topBorder - boxHeight)) || 
                         (boxLeft > (leftBorder - boxWidth))) {
-                        //alert("potaato");
+                        //alert(touch.target.movingBox);
                         touch.target.movingBox.removeClass("box-to-be-deleted");
                         touch.target.movingBox.removeClass("delete-highlight");
                         touch.target.movingBox.addClass("box-highlight");     
                     }
-                }
+                } else {
                 
                 /* only to occur if a box is being created*/
-                if (cacheEntry.creatingBox) {
+                //if (cacheEntry.creatingBox) {
                     var newLeft, newTop, newWidth, newHeight;
+                    touchIndex = touch.indentifier;
+                    cacheEntry = cache[touchIndex];
                     // if the finger is on the left side of the starting location..
                     if (touch.pageX < cacheEntry.initialX) {
                         newLeft = touch.pageX;
