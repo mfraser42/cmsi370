@@ -1,5 +1,5 @@
 $(function () {
-    //var cache = {};
+    var cache = {};
     
     window.BoxesTouch = {
         /**
@@ -9,14 +9,13 @@ $(function () {
             // Set up any pre-existing box elements for touch behavior.
             jQueryElements
                 .addClass("drawing-area")
-                //BoxesTouch.touchCache = {};
-                
+
                 // Event handler setup must be low-level because jQuery
                 // doesn't relay touch-specific event properties.
                 .each(function (index, element) {
                     element.addEventListener("touchmove", BoxesTouch.trackDrag, false);
                     element.addEventListener("touchend", BoxesTouch.endDrag, false);
-                    //element.addEventListener("touchstart", BoxesTouch.startCreate, false);
+                    element.addEventListener("touchstart", BoxesTouch.startCreate, false);
                 })
 
                 .find("div.box").each(function (index, element) {
@@ -25,24 +24,31 @@ $(function () {
                 });
         },
 
-       /* startCreate: function (event) {
+        startCreate: function (event) {
             $.each(event.changedTouches, function (index, touch) {
                 var cacheEntry = { };
-                cache[touch.identifier] = cacheEntry;
-                
+                touchIndex = touch.indentifier;                
                 cacheEntry.initialX = touch.pageX;
                 cacheEntry.initialY = touch.pageY;
                 
-                var createdBox = "<div..
+                var newBox = '<div class="box" style="width: 0px; height:0px; left:' + touch.pageX + 'px; top: ' + touch.pageY + 'px"></div>';
+                $("#drawing-area").append(newBox);
                 
+                touch.target.creatingBox = $("div div:last-child");
+                touch.target.creatingBox.addClass("create-highlight");
+                cacheEntry.creatingBox = touch.target.creatingBox;
+                cache[touchIndex] = cacheEntry;
                 
-                touch.target.initialX = touch.pageX;
-                touchIndex = touch.indentifier; 
-                BoxesTouch.toucheCache[touchIndex].initialX = touch.pageX;
-                BoxesTouch.toucheCache[touchIndex].initialY = touch.pageY; 
+                $("#drawing-area").find("div.box").each(function (index, element) {
+                    element.addEventListener("touchstart", BoxesTouch.startMove, false);
+                    element.addEventListener("touchend", BoxesTouch.unhighlight, false);
+                });
                 
-                $("#drawing-area").append('<div class="box" style="width: 0px; height:0px; left:' + touch.pageX + 'px; top: ' + touch.pageY + 'px"></div>'*/
-                
+             //    
+               // BoxesTouch.toucheCache[touchIndex].initialX = touch.pageX;
+                //BoxesTouch.toucheCache[touchIndex].initialY = touch.pageY; 
+            });
+        },       
 
         /**
          * Tracks a box as it is rubberbanded or moved across the drawing area.
@@ -50,6 +56,8 @@ $(function () {
         trackDrag: function (event) {
             $.each(event.changedTouches, function (index, touch) {
                 // Don't bother if we aren't tracking anything.
+                touchIndex = touch.indentifier;
+                cacheEntry = cache[touchIndex];
                 if (touch.target.movingBox) {
                 
                     // Reposition the object.
@@ -75,52 +83,49 @@ $(function () {
                         touch.target.movingBox.removeClass("box-highlight");
                         touch.target.movingBox.addClass("box-to-be-deleted");
                         touch.target.movingBox.addClass("delete-highlight");
-                        //alert("made it");
                     } else if ((boxLeft < rightBorder) || (boxTop < bottomBorder) || 
                         (boxTop > (topBorder - boxHeight)) || 
                         (boxLeft > (leftBorder - boxWidth))) {
                         touch.target.movingBox.removeClass("box-to-be-deleted");
                         touch.target.movingBox.removeClass("delete-highlight");
-                        touch.target.movingBox.addClass("box-highlight");
-                       // alert("made it2");                    
+                        touch.target.movingBox.addClass("box-highlight");     
                     }
-                    
-                    
-                    // if the box was outside the drawing area
                 }
-               /* if (touch.creatingbox) {
+                
+                if (cacheEntry.creatingBox) {
                     var newLeft, newTop, newWidth, newHeight;
                     
-                    if (touch.pageX < touch.initialX) {
+                    if (touch.pageX < cacheEntry.initialX) {
                         newLeft = touch.pageX;
-                        newWidth = touch.initialX-touch.pageX;
-                        if (touch.pageY < touch.initialY) {
+                        newWidth = cacheEntry.initialX - touch.pageX;
+                        if (touch.pageY < cacheEntry.initialY) {
                             newTop = touch.pageY;
-                            newheight = touch.initialy - touch.pagey;
+                            newHeight = cacheEntry.initialY - touch.pageY;
                         } else {
-                            newTop = touch.initialY;
-                            newheight = touch.pagey - touch.initialy;
+                            newTop = cacheEntry.initialY;
+                            newHeight = touch.pageY - cacheEntry.initialY;
                         }
-                    } else { (finger is on other side)
-                        newLeft = touch.initialX;
-                        newWidth = touch.pageX - touch.initialX;
-                        if (touch.pageY < touch.initialY) {
+                    } else { //(finger is on other side)
+                        newLeft = cacheEntry.initialX;
+                        newWidth = touch.pageX - cacheEntry.initialX;
+                        if (touch.pageY < cacheEntry.initialY) {
                             newTop = touch.pageY;
-                            newheight = touch.initialy - touch.pagey;
+                            newHeight = cacheEntry.initialY - touch.pageY;
                         } else {
-                            newTop = touch.initialY;
-                            newheight = touch.pagey - touch.initialy;
+                            newTop = cacheEntry.initialY;
+                            newHeight = touch.pageY - cacheEntry.initialY;
                         }
                     }
                     
-                    touch.creatingbox
+                    cacheEntry.creatingBox
                         .offset({
                             left: newLeft,
-                            top: newTop,
+                            top: newTop
                         })
                         .width(newWidth)
                         .height(newHeight)
-                }*/
+                }
+                cache[touchIndex] = cacheEntry;
             });
             
             // Don't do any touch scrolling.
@@ -132,15 +137,18 @@ $(function () {
          */
         endDrag: function (event) {
             $.each(event.changedTouches, function (index, touch) {
+                touchIndex = touch.indentifier;
+                cacheEntry = cache[touchIndex];
                 if (touch.target.movingBox) {
                     // Change state to "not-moving-anything" by clearing out
                     // touch.target.movingBox.
                     touch.target.movingBox = null;
                 }
-                //var cacheEntry = cache[touch.identifier];
-                
-                
-                // delete cache[touchEntry.identifier]
+                if (cacheEntry) {
+                    cacheEntry.creatingBox.removeClass("create-highlight");
+                    cacheEntry.creatingBox = null;
+                }
+                delete cache[touchIndex];
             });
         },
 
@@ -149,6 +157,7 @@ $(function () {
          */
         unhighlight: function () {
             $(this).removeClass("box-highlight");
+           // $(this).removeClass("create-highlight");
             if ($(this).hasClass("box-to-be-deleted")) {
                 $(this).remove();
             }
