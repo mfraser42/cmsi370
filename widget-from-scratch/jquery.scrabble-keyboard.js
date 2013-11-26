@@ -1,7 +1,11 @@
 (function ($) {
     
-    $.fn.swivel = function (options) {
+    $.fn.scrabble_keyboard = function (options) {
+        var $this = this,
+            $current = null;
     
+      //  $this.addClass("keyboard-box")
+        
         var keyboard_keys = ['q','w','e','r','t','y','u','i','o','p','|','a','s','d','f','g','h','j','k','l','|','z','x','c','v','b','n','m'],
             keysLength = keyboard_keys.length,
             xOffset = 0,
