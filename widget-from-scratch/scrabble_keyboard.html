@@ -1,0 +1,34 @@
+<!doctype html>
+
+<!-- A demonstration page for some hand-rolled jQuery plugins. -->
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>jQuery Plugin Demos</title>
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+        <!-- Sometimes, a plugin needs "companion" CSS.  That is fine. -->
+        <link rel="stylesheet" href="jquery.scrabble-keyboard.css">
+
+        <!-- And the page has its own styles. -->
+
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Scrabble Keyboard</h1>
+
+            <p>This plugin allows creates a drag-and-drop text input.</p>
+            
+            <div class="keyboard-box"> <div class="key">a</div> <div class="key">b</div> <div class="key">c</div> </div>
+
+        </div>
+
+        <!-- We wrap up by loading up jQuery, then Bootstrap, then our plugins,
+           then finally we actually use them. -->
+        <script src="//code.jquery.com/jquery-latest.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script src="jquery.scrabble-keyboard.js"></script>
+    </body>
+</html>
