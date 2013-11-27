@@ -15,17 +15,18 @@
         keyboard_keys.forEach(function (character) {
             if (character === '|') {
                 row++;
-                xOffset = row*3 + "%";
-                yOffset += 30 + "%";
+                yOffset += 20;
+                xOffset = 3*row;
+            } else {
+                var $key = $('<div class="key ' + character + '">' + character + "</div>");
+                $this.append($key);
+                $key.css({
+                    position: 'absolute',
+                    left: xOffset + '%',
+                    top: yOffset + '%'    
+                });
+                xOffset += 5;
             }
-
-            var $key = $('<div class="key' + character +'">' + character + "</div>");
-            $this.append($key);
-            $key.css({
-                position: 'absolute',
-                left: xOffset,
-                top: yOffset    
-            });
         });
 
     };
