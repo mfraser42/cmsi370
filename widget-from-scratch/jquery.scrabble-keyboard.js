@@ -13,8 +13,6 @@
             dropAreaOffsetRight = $(".drop-area").offset().left + $(".drop-area").width(),
             dropAreaOffsetBottom = $(".drop-area").offset().top + $(".drop-area").height();
             
-        
-        
         var $keyboard = $('<div class="keyboard-box"> </div>"');
         $this.append($keyboard);
 
@@ -23,7 +21,6 @@
             xOffset = 0,
             yOffset = 0,
             row = 0;
-
         
         /**
         * The majority of the Boxes object/variable code and comments are from dondi's "bazaar/boxes/boxes.js" git repository
@@ -158,12 +155,12 @@
         };
         
         Boxes.setDrawingArea($(".keyboard-box"));
-        
+        xOffset = 6;
         keyboard_keys.forEach(function (character) {
             if (character === '|') {
                 row++;
                 yOffset += 33;
-                xOffset = 3*row;
+                xOffset = 6 + 3*row;
             } else {
                 var $key = $('<div class="key ' + character + ' box">' + character + "</div>");
                 $keyboard.append($key);
@@ -172,13 +169,12 @@
                     left: xOffset + '%',
                     top: yOffset + '%'    
                 });
-                xOffset += 6;
+                xOffset += 8;
                 
                 $key
                     .mousemove(Boxes.highlight)
                     .mouseleave(Boxes.unhighlight)
                     .mousedown(Boxes.startMove);
-                
             }
         });
 
