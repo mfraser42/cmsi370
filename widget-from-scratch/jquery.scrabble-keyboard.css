@@ -17,7 +17,7 @@
 .key{
     background-color: #A4A4A4;
     width: 5%;
-    height: 23%;
+    height: 33%;
     min-height: 10px;
     min-width: 10px;
     border-style: solid;
@@ -25,4 +25,24 @@
     text-align: center;
     vertical-align: middle;
     cursor: move;
+}
+/* Drawing area properties. */
+.drawing-area {
+    cursor: crosshair;
+    position: relative;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Box properties and their variants. */
+.box {
+    border: thin solid black;
+    cursor: move;
+    position: absolute;
+}
+
+.box-highlight {
+    box-shadow: 0px 0px 6px #88F;
+    -moz-box-shadow: 0px 0px 6px #88F;
+    -webkit-box-shadow: 0px 0px 6px #88F;
 }
