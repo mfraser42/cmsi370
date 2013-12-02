@@ -18,7 +18,7 @@
         var $keyboard = $('<div class="keyboard-box"> </div>"');
         $this.append($keyboard);
 
-        var keyboard_keys = ['q','w','e','r','t','y','u','i','o','p','|','a','s','d','f','g','h','j','k','l','|','z','x','c','v','b','n','m','sp'],
+        var keyboard_keys = ['q','w','e','r','t','y','u','i','o','p','!','|','a','s','d','f','g','h','j','k','l','\'','|','z','x','c','v','b','n','m','.','sp'],
             keysLength = keyboard_keys.length,
             xOffset = 0,
             yOffset = 0,
@@ -77,9 +77,11 @@
              */
             endDrag: function (event) {
                 if (this.movingBox) {
-                    var currentX = event.pageX,
-                        currentY = event.pageY;
-                    if ((currentX < dropAreaOffsetRight) && (currentX > dropAreaOffsetLeft) && (currentY < dropAreaOffsetBottom) && (currentY > dropAreaOffsetTop)) {   
+                    var currentX = this.movingBox.offset().left,
+                        currentY = this.movingBox.offset().top;
+                    if ((currentX < dropAreaOffsetRight) && (currentX > dropAreaOffsetLeft - this.movingBox.width()) && 
+                        (currentY < dropAreaOffsetBottom) && (currentY > dropAreaOffsetTop - this.movingBox.height())) 
+                    {   
                         var input = $(".drop-area");
                         if (this.movingBox.text() === "sp") {
                             input.val(input.val() + ' ');
