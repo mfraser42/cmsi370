@@ -8,6 +8,13 @@
         var $dropArea = $('<input type="text" class="drop-area"> </input>');
         $this.append($dropArea);
         
+        var dropAreaOffsetLeft = $(".drop-area").offset().left,
+            dropAreaOffsetTop = $(".drop-area").offset().top,
+            dropAreaOffsetRight = $(".drop-area").offset().left + $(".drop-area").width(),
+            dropAreaOffsetBottom = $(".drop-area").offset().top + $(".drop-area").height();
+            
+        
+        
         var $keyboard = $('<div class="keyboard-box"> </div>"');
         $this.append($keyboard);
 
@@ -19,7 +26,7 @@
 
         
         /**
-        * The majority of the Boxes object/variable is from dondi's "bazaar/boxes/boxes.js" git repository
+        * The majority of the Boxes object/variable code and comments are from dondi's "bazaar/boxes/boxes.js" git repository
         */
         var Boxes = {
             /**
@@ -70,12 +77,23 @@
              */
             endDrag: function (event) {
                 if (this.movingBox) {
+                    var currentX = event.pageX,
+                        currentY = event.pageY;
+                    if ((currentX < dropAreaOffsetRight) && (currentX > dropAreaOffsetLeft) && (currentY < dropAreaOffsetBottom) && (currentY > dropAreaOffsetTop)) {   
+                        var input = $(".drop-area");
+                        if (this.movingBox.text() === "sp") {
+                            input.val(input.val() + ' ');
+                        } else {
+                            input.val(input.val() + this.movingBox.text());
+                        }    
+                    }
+                    
                     // Change state to "not-moving-anything" by clearing out
                     // this.movingBox.
                     this.movingBox = null;
                 }
 
-                // In either case, restore the highlight behavior that was
+                // Restore the highlight behavior that was
                 // temporarily removed while the drag was happening.
                 $(".drawing-area .box")
                     .removeClass("box-highlight")
