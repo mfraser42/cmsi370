@@ -1,35 +1,23 @@
+/* 
+    rpg.css - Stylesheet for Puzzles RPG Page Layout (what's common on each page)
+    Author: Michael Fraser
+*/
+
 .row {
     margin-bottom: 5px;
 }
 
-/* JD: For readability, I recommend a blank line between CSS blocks.
-       Put a space after your colons also. */
 h1 {
     text-align: center;
     color: crimson;
-    font-weight:bold;
+    font-weight: bold;
 }
-#character-select{
-    background-color:#91B5B5;
-    color:crimson;
-}
+
 body {
     background-color: #b4cdcd;    
 }
+
 .page-header a{
-    color:inherit;
-    text-decoration:none;
+    color: inherit;
+    text-decoration: none;
 }
-#inventory th{
-    text-align:center;
-}
-/* characters in table form 
-#characters th {
-    background-color:crimson;
-    color: white;
-}
-#characters {
-    background-color:#91B5B5;
-    color:crimson;
-    font-weight: bold;   
-} */

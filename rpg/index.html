@@ -1,137 +1,80 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Puzzles RPG Home Page</title>
+        <title> Puzzles RPG Home Page </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
         <!-- My CSS -->
         <link rel="stylesheet" href="rpg.css">
+        <link rel="stylesheet" href="index.css">
     </head>
-  
   
     <body>
         <div class="container">
               
             <div class="row">
                 <div class="page-header">
-                    <h1>Puzzles RPG<br /> <small>Character Selection</small></h1>
+                    <h1> Puzzles RPG <br /> <small> Character Selection </small></h1>
                 </div>
             </div>
-            
             
             <div class="row">
                 <div class="col-md-1"> </div>
-                <div class="col-md-5" id="character-list"> 
-                  <!-- table chars  <table id = "characters" class="table table-bordered table-hover"> 
-                        <thead>
-                            <tr>
-                                <th> Selected </th>
-                                <th> Name </th>
-                                <th> Class </th>
-                                <th> Sex </th>
-                                <th> Level </th>
-                                <th> Money </th>
-                            </tr>
-                            <tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div> -->
-            
-            
-                    <select id="character-select" multiple class="form-control" id = "characters" size = 20>
-                        <!-- JD: Format your attributes consistently: typically ^^^^^^ it is no spaces
-                                 around the = with the value always in double-quotes, even if said value
-                                 is a number. -->
-                    </select>
+                <div class="col-md-5" id="character-list">             
+                    <select id="character-select" multiple class="form-control" id ="characters" size="20"> </select>
                 </div> 
             </div>
-            
-            <!-- JD: These prior vestiges of your all-mock user interface can be safely deleted now, I'd
-                     say.  They're on GitHub anyway. -->
 
-              <!--  <div class="col-md-1"> </div>
-                <div class="col-md-4" id="c_list">
-                    <h4> List of Characters </h4>
-                    <ul id="character-list" class="list-group">
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="http://placehold.it/40x30"> 
-                                </div>
-                                <div class="col-md-9">
-                                    Slender: Level 7 Creeper
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="http://placehold.it/40x30"> 
-                                </div>
-                                <div class="col-md-9">
-                                    AquaMan: Level 22 Underappeciated Hero
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="http://placehold.it/40x30"> 
-                                </div>
-                                <div class="col-md-9">
-                                    Honey Badger: Level 9001 Beast
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="http://placehold.it/40x30"> 
-                                </div>
-                                <div class="col-md-9">
-                                    Potted Plant: Level 42 Unlucky Soul
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div> 
-            </div>-->
-            
             <div class="row">
                 <div class="col-md-1"> </div>
                 <div class="col-md-5">
-                    <a id="create-button" data-toggle="modal" href="#createModal" class="btn btn-success btn-lg btn-block">Create</a>
+                    <a id="create-button" data-toggle="modal" href="#createModal" class="btn btn-success btn-lg btn-block"> Create </a>
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-md-1"> </div>
                 <div class="col-md-5">
-                    <a id="edit-button" class="btn btn-info btn-lg btn-block">Edit</a>
+                    <a id="edit-button" class="btn btn-info btn-lg btn-block"> Edit </a>
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-md-1"> </div>
                 <div class="col-md-5">
-                    <a id="delete-button" data-toggle="modal" href="#deleteModal" class="btn btn-lg btn-danger btn-block">Delete</a>
+                    <a id="delete-button" data-toggle="modal" href="#deleteModal" class="btn btn-lg btn-danger btn-block"> Delete </a>
                 </div>
             </div>
+            
             <div class="row"> <br /></div>
+            
             <div class="row" id="footer">
                 <div class="col-md-1"></div>
-                <!-- JD: Cramming these onto one line gets somewhat cluttered.  You can safely linebreak
-                         and indent along tags as usual just fine here. -->
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="account.html"> Account  </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="settings.html"> Settings </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="feedback.html"> Feedback </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="help.html"> Help     </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> Logout </button> </div>
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="account.html"> Account </a> 
+                    </button> 
+                </div>
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="settings.html"> Settings </a>
+                    </button> 
+                </div>
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="feedback.html"> Feedback </a> 
+                    </button> 
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="help.html"> Help </a> 
+                    </button> 
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-link btn-lg"> Logout </button> 
+                </div>
             </div>
         </div>
     </div>
@@ -142,14 +85,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> (CORNER X)--> 
-          <h4 class="modal-title">Do you want to delete this character?</h4>
+          <h4 class="modal-title"> Do you want to delete this character? </h4>
         </div>
         <div class="modal-body">
           Deleting this character <strong> cannot </strong> be undone. 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Do Not Delete</button>
-          <button type="button" id="confirm-character-delete" class="btn btn-danger">Delete Character</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"> Do Not Delete </button>
+          <button type="button" id="confirm-character-delete" class="btn btn-danger"> Delete Character </button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -160,7 +103,7 @@
         <div class="modal-content">
             <div class="modal-header">
                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                 <h4 class="modal-title">Create your new character by filling in the data below.</h4>
+                 <h4 class="modal-title"> Create your new character by filling in the data below. </h4>
             </div>
             <div class="modal-body">
                 <div class="input-group">
@@ -194,6 +137,6 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
     <!-- Code specific to our RPG user interface. -->
-    <script src="rpg.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

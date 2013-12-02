@@ -1,0 +1,44 @@
+.keyboard-box{
+    position: absolute;
+    width: 100%;
+    min-width: 195px;
+    height: 75%;
+    min-height: 75px;
+    max-height: 100px;
+    border:2px solid #456879;
+    background-color: #8181F7;   
+}
+.drop-area{
+    margin: 2px;
+    width: 99%;
+    height: 25%;
+    min-height: 25px;
+    min-width: 195px;
+    border:2px solid #456879;
+	border-radius:10px;
+}
+.key{
+    position: absolute;
+    border: solid black;
+    border-width: 2px;
+    background-color: #A4A4A4;
+    width: 8%;
+    height: 33%;
+    min-width: 20px;   
+    text-align: center;
+    vertical-align: middle;
+    cursor: move;
+}
+/* Drawing area properties. */
+.drawing-area {
+    cursor: crosshair;
+    position: relative;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.box-highlight {
+    box-shadow: 0px 0px 6px #88F;
+    -moz-box-shadow: 0px 0px 6px #88F;
+    -webkit-box-shadow: 0px 0px 6px #88F;
+}

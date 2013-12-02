@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Character Page</title>
+        <title>Puzzles RPG Character Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
         <!-- My CSS -->
         <link rel="stylesheet" href="rpg.css">
-        <!-- JD: Hmmmm, same CSS file huh?  As long as you know which selectors go with which... -->
+        <link rel="stylesheet" href="character.css">
     </head>
   
   
@@ -96,22 +96,38 @@
                 <div class="col-md-3"> 
                     <table id="inventory" class="table table-bordered">
                         <th> Inventory </th>
-                        <!-- JD: Awwww, and here I thought you somehow populated this from JavaScript. -->
-                        <tr> <td> Wirt's Leg </td> </tr>
-                        <tr> <td> Potato </td> </tr>
                     </table>
                     <button id="random_item" type="button" class="btn btn-info btn-block">Add Item</button>
                 </div>
             </div>
             
             <div class="row"> <br /></div>
+            
             <div class="row" id="footer">
                 <div class="col-md-1"></div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="account.html">  Account  </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="settings.html"> Settings </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="feedback.html"> Feedback </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> <a href="help.html"> Help         </a> </button> </div>
-                <div class="col-md-2"> <button type="button" class="btn btn-link btn-lg"> Logout </button> </div>
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="account.html"> Account </a> 
+                    </button> 
+                </div>
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="settings.html"> Settings </a>
+                    </button> 
+                </div>
+                <div class="col-md-2"> 
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="feedback.html"> Feedback </a> 
+                    </button> 
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-link btn-lg"> 
+                        <a href="help.html"> Help </a> 
+                    </button> 
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-link btn-lg"> Logout </button> 
+                </div>
             </div>
         </div>
     </div>

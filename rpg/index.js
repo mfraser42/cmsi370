@@ -1,31 +1,8 @@
-// Big things have small beginnings... 
+/* 
+    index.js - Javascript corresponding to the index page (index.html) of Puzzles RPG.
+    Author: Michael Fraser
+*/
 $(function () {
-
-    // JD: These arrays are no longer used---clean them out!
-    var char_names = ["Slender", "AquaMan", "Honey Badger", "Potted Plant"];
-    var char_levels = ["7", "22", "9001", "42"];
-    var char_types = ["Creeper", "Underappreciated Hero", "Beast", "Unlucky Soul"];
-    
-    var inv_items = new Array(); // JD: Or, [].
-    inv_items.push("Wirt's Leg");
-    inv_items.push("Potato");
-    
-    var random_items = ["A Crooked Seven", "Pocket Lint", "Microprocessor", "Left Shoe", "Pen", "Scroll on Interaction Design", "Wirt\'s Leg", "Potato"];
-
-    // JD: You load this JavaScript file into index.html but this element only applies
-    //     to character.html---if you overdo this things can get pretty confusing.
-    $( "#random_item" ).click(function () {
-        if (inv_items.length == 9) { // JD: Triple-equals === is preferred in JavaScript.
-            alert("Inventory is full.");
-        } else {
-            // JD: This line can use spaces around the *.
-            var rand_index = Math.floor(Math.random()*random_items.length);
-            // JD: This line can *lose* spaces, around the parentheses and between
-            //     the tag literals.
-            $( "#inventory" ).append("<tr> <td> " + random_items[rand_index] + " </td> </tr>");
-            inv_items.push(random_items[rand_index]);
-        }
-    });
     
     $.getJSON(
         "http://lmu-diabolical.appspot.com/characters",
@@ -33,7 +10,8 @@ $(function () {
             characters.forEach(function(character) {
                 // JD: When using quotes in a string, you can delimit with apostrophes.  Slightly
                 //     more readable, e.g. '<option id="boo">'.
-                var characterRow = "<option id=\"" + character.id + "\" + value=" + character.name + ">" + character.name + ": " + "Level " + character.level + " " + character.classType + "</option>";
+                var characterRow = "<option id=\"" + character.id + "\" + value=" + character.name + ">" 
+                + character.name + ": " + "Level " + character.level + " " + character.classType + "</option>";
                 $("#character-select").append(characterRow);                
             });
         }
