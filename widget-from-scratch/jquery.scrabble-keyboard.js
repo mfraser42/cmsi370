@@ -85,8 +85,13 @@
                             input.val(input.val() + ' ');
                         } else {
                             input.val(input.val() + this.movingBox.text());
-                        }    
+                        }
                     }
+                    
+                    this.movingBox.offset({
+                        left: this.initialX,
+                        top: this.initialY
+                    });
                     
                     // Change state to "not-moving-anything" by clearing out
                     // this.movingBox.
@@ -135,6 +140,8 @@
                     parent.movingBox = jThis;
                     parent.deltaX = event.pageX - startOffset.left;
                     parent.deltaY = event.pageY - startOffset.top;
+                    parent.initialX = startOffset.left;
+                    parent.initialY = startOffset.top;
 
                     // Take away the highlight behavior while the move is
                     // happening.
