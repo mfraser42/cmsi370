@@ -1,3 +1,9 @@
+/* 
+    Wrtitten by Michael Fraser.
+    This plugin creates a text input and a keyboard when draggable keys to move into the text input box. To use the value of the text input
+    you must call $(".drop-area").val()
+    
+*/
 (function ($) {
     
     $.fn.scrabble_keyboard = function (options) {
@@ -7,11 +13,6 @@
       //  $this.addClass("keyboard-box")
         var $dropArea = $('<input type="text" class="drop-area"> </input>');
         $this.append($dropArea);
-        
-        var dropAreaOffsetLeft = $(".drop-area").offset().left,
-            dropAreaOffsetTop = $(".drop-area").offset().top,
-            dropAreaOffsetRight = $(".drop-area").offset().left + $(".drop-area").width(),
-            dropAreaOffsetBottom = $(".drop-area").offset().top + $(".drop-area").height();
             
         var $keyboard = $('<div class="keyboard-box"> </div>"');
         $this.append($keyboard);
@@ -75,7 +76,12 @@
             endDrag: function (event) {
                 if (this.movingBox) {
                     var currentX = this.movingBox.offset().left,
-                        currentY = this.movingBox.offset().top;
+                        currentY = this.movingBox.offset().top,
+                        dropAreaOffsetLeft = $(".drop-area").offset().left,
+                        dropAreaOffsetTop = $(".drop-area").offset().top,
+                        dropAreaOffsetRight = $(".drop-area").offset().left + $(".drop-area").width(),
+                        dropAreaOffsetBottom = $(".drop-area").offset().top + $(".drop-area").height();
+                        
                     if ((currentX < dropAreaOffsetRight) && (currentX > dropAreaOffsetLeft - this.movingBox.width()) && 
                         (currentY < dropAreaOffsetBottom) && (currentY > dropAreaOffsetTop - this.movingBox.height())) 
                     {   

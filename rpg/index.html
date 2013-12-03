@@ -1,3 +1,9 @@
+<!-- 
+    index.html - the index page of the Puzzles RPG
+    Author: Michael Fraser
+    
+    The plugin being tested is in the creation modal, and the code is at the bottom of the page.
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,6 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        
+        <!-- Plug-in CSS -->
+        <link rel="stylesheet" href="jquery.scrabble-keyboard.css">
 
         <!-- My CSS -->
         <link rel="stylesheet" href="rpg.css">
@@ -107,19 +116,12 @@
             </div>
             <div class="modal-body">
                 <div class="input-group">
-                    <input id="create-char-name" type="text" class="form-control" placeholder="Character Name" />
+                <!-- This division is is where the plugin gets used-->
+                    <div id="create-char-name"> </div>
                     <br />
                     <input id="create-char-class" type="text" class="form-control" placeholder="Class" />
                     <br />
-                    <input id="create-char-sex" type="text" class="form-control" placeholder="Sex" />
-                    <!-- JD: Why did you dump this?  Looks like a fine select element for
-                             a character's class. -->
-                    <!--<select id="class-select">
-                        <option value="Underappreciated Hero">Underappreciated Hero</option>
-                        <option value="Beast">Beast</option>
-                        <option value="Creeper">Creeper</option>
-                        <option value="Unlucky">Unlucky Soul</option>
-                    </select>-->
+                    <input id="create-char-sex" type="text" class="form-control" placeholder="Sex (MALE or FEMALE)" />
                 </div>
             </div>
             <div class="modal-footer">
@@ -135,7 +137,8 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
+    <script src="jquery.scrabble-keyboard.js"></script>
+    
     <!-- Code specific to our RPG user interface. -->
     <script src="index.js"></script>
   </body>
