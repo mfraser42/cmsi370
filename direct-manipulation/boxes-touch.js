@@ -28,13 +28,37 @@ $(function () {
         startCreate: function (event) {
             $.each(event.changedTouches, function (index, touch) {
                 var cacheEntry = { };
-                touchIndex = touch.indentifier;                
+                touchIndex = touch.indentifier; // JD: touchIndex is top-level scope, you realize?
+                // JD: And...look. At. The. Property name. Closely.
                 cacheEntry.initialX = touch.pageX;
                 cacheEntry.initialY = touch.pageY;
                 
+                // JD: Alternatively, you can define this "template" as a standalone
+                //     string at the top, then set its attributes via jQuery, e.g.:
+                //
+                //     ...
+                //     var cache = {},
+                //         TEMP_BOX_TEMPLATE = '<div class="box"></div>';
+                //
+                //     ...
+                //
+                //     var newBox = $(TEMP_BOX_TEMPLATE).css({
+                //         width: "0px",
+                //         height: "0px",
+                //         left: touch.pageX + "px",
+                //         top: touch.pageY + "px"
+                //     });
+                //
+                //     ...
+                //
+                //     You may find this approach to be a little more readable and
+                //     less error-prone.
+                //
                 var newBox = '<div class="box" style="width: 0px; height:0px; left:' + touch.pageX + 'px; top: ' + touch.pageY + 'px"></div>';
                 $("#drawing-area").append(newBox);
-                
+
+                // JD: There is no need to assign anything to touch or touch.target
+                //     at all, now that you have the cacheEntry approach.
                 touch.target.creatingBox = $("div div:last-child");
                 touch.target.creatingBox.addClass("create-highlight");
                 cacheEntry.creatingBox = touch.target.creatingBox;
@@ -66,11 +90,15 @@ $(function () {
                     });
                     
                     /* variables concerning the drawing area box */
-                    touchArea = $("#drawing-area");
+                    touchArea = $("#drawing-area"); // JD: And now touchArea is top-level scope.
+                    // JD: Plus, you have hardcoded #drawing-area.  Note that we are
+                    //     not making this assumption (see how setDrawingArea does not
+                    //     make reference to this selector at all).
                     rightBorder = touchArea.offset().left + touchArea.width();
                     bottomBorder = touchArea.offset().top + touchArea.height();
                     leftBorder = touchArea.offset().left;
                     topBorder = touchArea.offset().top;
+                    // JD: Wow, a whole bunch of top-level variables here.  Use var!
                     
                     /* variables concerning the moving box (thing being manipulated) */
                     boxLeft = touch.target.movingBox.offset().left;
@@ -98,9 +126,10 @@ $(function () {
                 /* only to occur if a box is being created*/
                 //if (cacheEntry.creatingBox) {
                     var newLeft, newTop, newWidth, newHeight;
-                    touchIndex = touch.indentifier;
+                    touchIndex = touch.indentifier; // JD: Take.  Another.  Good.  Look.
                     cacheEntry = cache[touchIndex];
                     // if the finger is on the left side of the starting location..
+                    // JD: Note the new top and y computation code are still redundant.
                     if (touch.pageX < cacheEntry.initialX) {
                         newLeft = touch.pageX;
                         newWidth = cacheEntry.initialX - touch.pageX;
@@ -132,6 +161,8 @@ $(function () {
                         .height(newHeight)
                 }
                 cache[touchIndex] = cacheEntry;
+                // JD: Why is this line here?  You do realize that this line also executes
+                //     when moving a box, right?
             });
             
             // Don't do any touch scrolling.
@@ -154,7 +185,7 @@ $(function () {
                     cacheEntry.creatingBox.removeClass("create-highlight");
                     cacheEntry.creatingBox = null;
                 }
-                cache[touchIndex] = cacheEntry;
+                cache[touchIndex] = cacheEntry; // JD: No need for this; it's a re-assignment.
                 cacheEntry = null;
                 delete cache[touchIndex];
             });
