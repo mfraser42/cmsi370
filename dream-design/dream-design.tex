@@ -1,9 +1,9 @@
 \documentclass[11pt, oneside]{article}
 \usepackage{graphicx}
-\usepackage{url}
 \begin{document}
 
-\title{Crimsas: A Text-Editor "Dream" Interface}
+\title{Crimsas \\ A Text-Editor ``Dream" Interface}
+%Crimsas stems from the color crimson, to which I randomly associate myself (my computer's name is "Crimson-Mint") and my last name, which means Strawberry in the Scottish language. Strawberry was then translated to Spanish as Fresas, to which my brother made his Xbox gamer tag. I later made my gamer tag similar with Fresas in the name. Thus, Crimsas. In case anyone was curious.
 \author{Michael Fraser}
 \maketitle
 
@@ -54,13 +54,15 @@ A search bar will be provided to allow users to search for a command or tool spe
 
 Any buttons in the toolbar will be given wide borders of operation, allowing the user to click anywhere near the option's text or icon to access the tool or command. This aspect apeases Fitz's law of user interaction, as the larger the button is the easier the button is to press, making the task of pressing a button more efficient. The button's will utilize icons that greatly correspond to the task or action they represent. The affordances of those icons will suggest to the user what it is that the button represents without the application needing to explicitly state the button's purpose. In the event the button's icon does not provide a clear picture of the tool it represents for the user, hovering a mouse over the icon will create a pop-up message with the command or tool's name. 
 
-A tab system will be included as one of the toolbars, allowing users to open multiple session windows from a single application window. The tabs are able to be reorganized by directly dragging the desired tab to a desired location. The tab feature and direct manipulation style of interacting with the tabs will not be new to text editors. %fix
+A tab system will be included as one of the toolbars, allowing users to open multiple session windows from a single application window. The tabs are able to be reorganized by directly dragging the desired tab to a desired location. The tab feature and direct manipulation style of interacting with the tabs will not be new to text editors. %fix -- add: tabs can be placed alongside each other WITHIN the same window - less app windows to deal with
 
 Scrolling through the document content of the new text editor will be similar to scrolling through
 
+The toolbar will also be able to be reorganized according to the user's preference. A locking mechanism will ensure the icons are not accidentally displaced when being used, and the locking mechanism will be toggled by a semi-complex keyboard shortcut, a menu item, or by clicking on the icon of a lock at the edge of the toolbar. The lock icon will be placed to the side, away from the other icons so it is not accidentally toggled. When the lock is clicked, or when the menu item is selected, a pop-up window will ask the user to confirm that the toolbar will become editable. Once in the editable state, the user can click and drag icons or other tools along the toolbars. If no toolbar editing has occured after a set period of time, the toolbar will lock itself unless the user disables this feature in the preferences menu. 
+
 \section{Design Analysis}
 \subsection{Usability Metrics}
-The overall application will measure up against current text editor's when considering Nielsen's "usability metrics" of learnability, efficiency, errors, memorability, and satisfaction. 
+The overall application will measure up against current text editor's when considering Nielsen's ``usability metrics" of learnability, efficiency, errors, memorability, and satisfaction. 
 
 As the designed interface is a text editor, most users will already have some experience with similar applications and will be able to easily adapt to using the new interface. For the users with text editor experience, the application will be extremely learnable. Their previous experiences will allow them to understand the basics of a text editor so they can immediately begin learning the new features. The new features will be accompanied with tutorials, so that the user can easily step through the features. The tutorial will always be available also, so a user who has not used the application for some time can go back and look through the tutorials to figure out the various features. A user that is inexperienced with text editors will be able to use beginner tutorials that walk them through the purpose and uses of a text editor, the basic tools, and some best practices. When the user feels comfortable with the application, the more advanced tutorials will allow them to learn the more advanced features of the application. The tutorials increase how learnable the application is, and provide the users with a reference on how to use the application.
 
@@ -74,7 +76,11 @@ Satisfaction
 
 
 
-\subsection{Sytles of Interface}
+\subsection{Sytles of Interaction}
+This application uses four main styles of interaction: menu, command-line, direct manipulation, and natural language. Menu and command-line interaction styles are common among text editors, whereas direct manipulation and natural language are not as common. The menu aspect is for the toolbars which allow the user to search for commands or tools. They limit the user's need to remember how to use the application, as the tools and commands are laid out for the user to explore easily. The command-line form of interacting is primarily for adding content to a document. The direct manipulation aspect is present in setting the position and size of the application window, the organization of the different tabs, and the organization of the toolbar. 
+
+Direct manipulation gives the user complete control over the elements being moved, improving their satisfaction with the application. If this application were to run on a device with a touch screen, touch inputs would be accepted in the place of mouse clicks, increasing the directness of the user manipulation. The natural language interaction provides the users with an alternative form of adding content to a document. This interaction style will also be used to evoke commands or select tools by utilizing a keyword system. Saying the name of the application, "Crimsas," will cause the system to wait for a command or option. This includes allowing for the input of special characters or telling the application to modify the file. For example ``Crimsas character comma'' will input a `,' character into the document. Alternatively, saying ``Crimsas save" will save the file.
+
 
 %\subsection...
 
