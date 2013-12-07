@@ -80,7 +80,14 @@ A tab system will be included as one of the toolbars, allowing users to open mul
 The toolbar will also be able to be reorganized according to the user's preference. A locking mechanism will ensure the icons are not accidentally displaced when being used, and the locking mechanism will be toggled by a semi-complex keyboard shortcut, a menu item, or by clicking on the icon of a lock at the edge of the toolbar. The lock icon will be placed to the side, away from the other icons so it is not accidentally toggled. When the lock is clicked, or when the menu item is selected, a pop-up window will ask the user to confirm that the toolbar will become editable. Once in the editable state, the user can click and drag icons or other tools along the toolbars. If no toolbar editing has occured after a set period of time, the toolbar will lock itself unless the user disables this feature in the preferences menu. 
 
 \section{Final Design Layout}
-The final design layout will compose of a main document area, similar to that shown in Figure \ref{multitasking_tabs}. Above that area will be a menu toolbar similar to that seen in Figure \ref{Gedit_menu}. The right hand side of each tab will have a scroll bar that appears when the content height becomes larger than the height of the tab, and the left hand side will have numbered lines. The bottom right corner of each tab will have a stretchable icon similar to that of Figure \ref{corner_symbol}. 
+The final design layout will compose of a main document area, similar to that shown in Figure \ref{multitasking_tabs}. Above that area will be a menu toolbar similar to that seen in Figure \ref{Gedit_menu}. The toolbar will have options to allow the user to engage or disengage the natural language input, illustrated with a microphone symbol, and to lock or unlock the toolbar, illustrated with a lock symbol. The right hand side of each tab will have a scroll bar that appears when the content height becomes larger than the height of the tab, and the left hand side will have numbered lines. The bottom right corner of each tab will have a stretchable icon similar to that of Figure \ref{corner_symbol}. An depiction of what the final layout will resemble can be found in Figure \ref{final}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{photos/final_layout.png}
+    \caption{Final Layout Depiction}
+    \label{final}
+\end{figure}
 
 \section{Design Analysis}
 \subsection{Usability Metrics}
@@ -92,11 +99,9 @@ With multiple forms of input, multiple ways of evoking commands, and customizabl
 
 A user's ability to remember how to use the interface would be divided amongst the different features. Features common to text editors are often very basic, and a user would be very likely to remember how to utilize those features. Newer features, like the interface for natural language input, may require a quick glance at a help document or tutorial. This new feature is not typical to other applications, and the user would be less likely to remember the feature's uses after a significant period of time.
 
-Keyboard text input is prone to typing errors, but a natural language input would be able to add content accurately if the user speaks concisely. It is less likely that typing mistakes or misclicks would occur when using natural language styled input, as those devices are not utilized in the process. 
+Keyboard text input is prone to typing errors, but a natural language input would be able to add content accurately if the user speaks concisely. It is less likely that typing mistakes or misclicks would occur when using natural language styled input, as those devices are not utilized in the process. Assuming the natural language recognition and input system is completely functional, the errors of using the system will be minimal.
 
-Satisfaction
-
-
+Producing a document using only a voice or writing code in an unfamiliar language without having to look up the documentation often are somewhat uncommon, and add the satisfaction of a user when the user manages to pull it off. 
 
 \subsection{Sytles of Interaction}
 This application uses four main styles of interaction: menu, command-line, direct manipulation, and natural language. Menu and command-line interaction styles are common among text editors, whereas direct manipulation and natural language are not as common. The menu aspect is for the toolbars which allow the user to search for commands or tools. They limit the user's need to remember how to use the application, as the tools and commands are laid out for the user to explore easily. The command-line form of interacting is primarily for adding content to a document. The direct manipulation aspect is present in setting the position and size of the application window, the organization of the different tabs, and the organization of the toolbar. 
@@ -110,14 +115,7 @@ Direct manipulation gives the user complete control over the elements being move
 
 \end{document}
 
-
-
-% theories, principles and guidelines
-%7 stage sof action, oAI, usability metrics,
-%fitt's law, tagazinni's 16, etc
-% interaction styles: direct manipulation, menus forms and dialogues, command-line, natural language
-% everything together: dream interface, interface that would be as good as possible
-% lego exercise: affordance: objects and amterials send you signals, tell you things that help you understand what those things are for
-% when it all comes together, the user should get the same picture you had
-% 
+%theories, guidelines, principles
+%7 stage sof action, oAI,
+% tagazinni's 16, etc
 
