@@ -7,7 +7,10 @@
       //  $this.addClass("keyboard-box")
         var $dropArea = $('<input type="text" class="drop-area"> </input>');
         $this.append($dropArea);
-        
+
+        // JD: Alternatively, you can just keep referencing $dropArea.
+        //     Things might get confusing if the page has other elements
+        //     with class="drop-area".
         var dropAreaOffsetLeft = $(".drop-area").offset().left,
             dropAreaOffsetTop = $(".drop-area").offset().top,
             dropAreaOffsetRight = $(".drop-area").offset().left + $(".drop-area").width(),
@@ -16,6 +19,11 @@
         var $keyboard = $('<div class="keyboard-box"> </div>"');
         $this.append($keyboard);
 
+        // JD: Future feature: customizable keys on the keyboard :)
+        //     And...what if the user wants to have a "!" key?
+        //     You can consider doing an array of arrays instead, one array per key row.  This
+        //     will eliminate the exclusion of that "special" character to indicate a new
+        //     keyboard row.
         var keyboard_keys = ['q','w','e','r','t','y','u','i','o','p','!','|','a','s','d','f','g','h','j','k','l','\'','|','z','x','c','v','b','n','m','.','sp'],
             keysLength = keyboard_keys.length,
             xOffset = 0,
@@ -24,7 +32,7 @@
         
         /**
         * The majority of the Boxes object/variable code and comments are from dondi's "bazaar/boxes/boxes.js" git repository
-        */
+        */ // JD: Maybe it should have been renamed "Keys" :)
         var Boxes = {
             /**
              * Constant for the left mouse button.
@@ -76,9 +84,15 @@
                 if (this.movingBox) {
                     var currentX = this.movingBox.offset().left,
                         currentY = this.movingBox.offset().top;
-                    if ((currentX < dropAreaOffsetRight) && (currentX > dropAreaOffsetLeft - this.movingBox.width()) && 
+
+                    // JD: Key piece of logic right here.  Alternatively, you could check
+                    //     for a mouseup on $(".drop-area")---wouldn't this have taken care
+                    //     of the bounds checking?
+                    if ((currentX < dropAreaOffsetRight) && (currentX > dropAreaOffsetLeft - this.movingBox.width()) &&
                         (currentY < dropAreaOffsetBottom) && (currentY > dropAreaOffsetTop - this.movingBox.height())) 
-                    {   
+                    { // JD: This brace should be on the previous line.
+                        // JD: Another future feature: insert the character based on *where* the
+                        //     key was dropped.
                         var input = $(".drop-area");
                         if (this.movingBox.text() === "sp") {
                             input.val(input.val() + ' ');
