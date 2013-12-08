@@ -11,6 +11,8 @@
             $current = null;
     
       //  $this.addClass("keyboard-box")
+        // JD: You made a copy of your plugin files here *and* they are slightly different!
+        //     Not the right way to manage what should be reusable code.
         var $dropArea = $('<input type="text" class="drop-area"> </input>');
         $this.append($dropArea);
             
